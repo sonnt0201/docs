@@ -112,7 +112,7 @@ Kết hợp lại:
 #### Khái niệm
 
 \- `map` gồm các phần tử ở dạng `"key" - "value"`, nghĩa là 1 cặp gồm từ khóa - giá trị.  
-\- Giống kiểu trong phù hiệu có Tên: Nguyễn Thái Sơn, Lớp: 12A1, Năm học: 2020-2021, thì `Tên, Lớp, Năm học` là các `"key"` và `Nguyễn Thái Sơn, 12A1, 2020-2021` lần lượt và `value` tương ứng  
+\- Giống kiểu trong phù hiệu có Tên: Nguyễn Thái Sơn, Lớp: 12A1, Năm học: 2020-2021, thì `Tên, Lớp, Năm học` là các `"key"` và `Nguyễn Thái Sơn, 12A1, 2020-2021` lần lượt là `value` tương ứng  
 \- Tạo `map` rỗng:
 ```cpp
     #include <iostream>
