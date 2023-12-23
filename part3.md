@@ -8,7 +8,7 @@ Tổng quan
 
 - Con trỏ trong C++ rất quan trọng.
 
-- Khi một biến được khai báo: `int a`, chương trình sẽ cấp cho biến `a` một ô nhớ trong bộ nhớ để lưu trữ giá trị của biến đó. Tùy vào kiểu dữ liệu mà biến đó được cấp bao nhiêu bytes (1 byte cho `char`, 4 bytes cho `int`, `float`, 8 bytes cho `double`, v.v.. ).
+- Khi một biến được khai báo: `int a`, chương trình sẽ cấp cho biến `a` một ô nhớ trong bộ nhớ để lưu trữ giá trị của biến đó. Tùy vào kiểu dữ liệu mà biến (cũng như ô nhớ) đó được cấp bao nhiêu bytes (1 byte cho `char`, 4 bytes cho `int`, `float`, 8 bytes cho `double`, v.v.. ).
 
 - Một con trỏ đại diện cho 1 ô nhớ trong bộ nhớ.
 
