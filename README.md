@@ -55,7 +55,7 @@ Thêm các phần tử vào tập hợp thì dùng `insert()`
 \- Dù thứ tự thêm như nào, thứ tự các phần tử vẫn được xếp theo bé đến lớn, hãy thử in ra các phần tử trong tập hợp:
 
 ```cpp
-    for (auto &phantu : taphop) { /* Lưu ý đây là lấy kiểu tham chiếu */ 
+    for (auto &phantu : taphop) { /* Lưu ý đây là lấy kiểu THAM CHIẾU */ 
         cout << phantu << endl;
     } 
 ```
@@ -158,7 +158,8 @@ Kết hợp lại:
 
 \- Dùng `first` để lấy `key` và `second` để lấy `value`  
 
-Kết quả: ![console](map_1.png) - Nếu cố lấy 1 phần tử thông qua `key` mà phần tử đó chưa được định nghĩa, `map` cũng sẽ tạo phần tử đó và đặt `value` là `0` (nếu value là int, bool hay các kiểu số khác) hoặc `""` (với value là `string` )
+Kết quả: ![console](map_1.png) 
+\- Nếu cố lấy 1 phần tử thông qua `key` mà phần tử đó chưa được định nghĩa, `map` cũng sẽ tạo phần tử đó và đặt `value` là `0` (nếu value là int, bool hay các kiểu số khác) hoặc `""` (với value là `string` )
 ```cpp
  /*cặp giá trị với key là "thu" chưa được khai báo*/ 
       cout << tuoi["thu"] << endl;
