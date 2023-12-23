@@ -83,7 +83,7 @@ cout<<"Giá trị mới tại ô nhớ p_a: "<<*p_a<<endl
 
 - Lúc này giá trị tại vùng nhớ `p_a` thay đổi thành 100, và dĩ nhiên, do `p_a` cũng là địa chỉ của a, nên giá trị biến a cũng thay đổi theo luôn, cũng thành 100;
 
-#### Con trỏ trỏ đến con trỏ
+#### 4. Con trỏ trỏ đến con trỏ
 
 - Biến con trỏ như `p_a`, `p_b` thì vẫn cứ là một biến. Vì vậy khi khởi tạo biến đó hệ điều hành vẫn cấp phát 1 ô nhớ để lưu giá trị biến đó như thường.
 
