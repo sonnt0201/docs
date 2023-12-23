@@ -78,7 +78,7 @@ Thêm các phần tử vào tập hợp thì dùng `insert()`
   
 \- Kiểm tra 1 phần tử có hay không:
 ```cpp
-    taphop.empty() /* return true or false */
+    taphop.count(10) /* return 0 or 1 */
 ```
   
 Kết hợp lại:
