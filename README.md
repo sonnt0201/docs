@@ -55,7 +55,7 @@ Thêm các phần tử vào tập hợp thì dùng `insert()`
 \- Dù thứ tự thêm như nào, thứ tự các phần tử vẫn được xếp theo bé đến lớn, hãy thử in ra các phần tử trong tập hợp:
 
 ```cpp
-    for (auto &phantu : taphop) { /* Lưu ý đây là lấy kiểu tham trị */ 
+    for (auto &phantu : taphop) { /* Lưu ý đây là lấy kiểu tham chiếu */ 
         cout << phantu << endl;
     } 
 ```
