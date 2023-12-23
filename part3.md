@@ -1,6 +1,6 @@
  
 
-Con trỏ trong C++ (C++ Pointer)
+Con trỏ vỡ lòng (C++ Pointer)
 ==========================
 
 Tổng quan
@@ -122,10 +122,6 @@ Kết quả là `a: 10` và `b: 5`. Ta đạt được một hiệu ứng
 ### Con trỏ và mảng 1 chiều
 
 Trong C++ có mối quan hệ chặt chẽ giữa con trỏ và mảng: các phần tử của mảng có thể được xác định nhờ chỉ số hoặc thông qua con trỏ.
-
-#### 4.1. Phép lấy địa chỉ
-
-Áp dụng cho các phần tử của mảng 1 chiều,
 
 * * *
 ### Các nguồn tham khảo:
