@@ -121,7 +121,7 @@ Kết quả là `a: 10` và `b: 5`. Ta đạt được một hiệu ứng
 
 ### Con trỏ và mảng 1 chiều
 
-Trong C++ có mối quan hệ chặt chẽ giữa con trỏ và mảng: các phần tử của mảng có thể được xác định nhờ chỉ số hoặc thông qua con trỏ.
+Trong C++ có mối quan hệ chặt chẽ giữa con trỏ và mảng: các phần tử của mảng có thể được xác định nhờ chỉ số hoặc thông qua con trỏ. Em sẽ viết kĩ ở phần sau
 
 * * *
 ### Các nguồn tham khảo:
