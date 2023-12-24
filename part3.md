@@ -72,7 +72,7 @@ cout<<"Địa chỉ của b là: "<<p_b<<endl; // cũng là &b
 
 cout<<"Giá trị được lưu tại ô nhớ p_a là: "<<*p_a<<endl; // in ra 5 - cũng là giá trị của a
 
-cout<<"Giá trị được lưu tại ô nhớ p_a là: "<<*p_b<<endl; // in ra 10 - cũng là giá trị của b
+cout<<"Giá trị được lưu tại ô nhớ p_b là: "<<*p_b<<endl; // in ra 10 - cũng là giá trị của b
 ```
 
 #### 3. Thay đổi giá trị của 1 ô nhớ
