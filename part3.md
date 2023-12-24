@@ -56,7 +56,9 @@ p_a = &a;
 - Dấu `*` để lấy giá trị đang được lưu ở 1 ô nhớ. Nó chỉ được dùng cho các biến con trỏ mà thôi: `*p_a`, `*p_b` tức là lấy giá trị đang được lưu tại ô nhớ (con trỏ) `p_a` và `p_b`.
 
 ```cpp
-int a = 5, b = 10, *p_a = &a, *p_b = &b;
+int a = 5, b = 10, *p_a, *p_b; 
+p_a = &a;
+p_b = &b;
 ```
 Lúc này, `p_a`, `p_b` lần lượt lưu địa chỉ của biến `a` và `b`.
 
