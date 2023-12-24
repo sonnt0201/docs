@@ -36,9 +36,10 @@ int *p_a;
 
 - Cũng có thể khai báo là `int* p_a;`, dấu `*` ở gần `int` hay `p_a` đều được. 
 
-- `int*` là kiểu con trỏ cho giá trị `int`, `double*` là kiểu con trỏ cho giá trị `double`, `string*` là kiểu con trỏ cho giá trị `string`, v.v..
 
 - Khai báo biến con trỏ cũng cần kiểu dữ liệu đi kèm, với `p_a` ở trên là `int*`, tức là **Con trỏ này trỏ tới 1 địa chỉ ô nhớ chứa giá trị integer**.
+
+- `int*` là kiểu con trỏ cho giá trị `int`, `double*` là kiểu con trỏ cho giá trị `double`, `string*` là kiểu con trỏ cho giá trị `string`, v.v..
 
 #### 2. Gán giá trị cho con trỏ
 
