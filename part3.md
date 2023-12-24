@@ -36,9 +36,10 @@ int *p_a;
 
 - Cũng có thể khai báo là `int* p_a;`, dấu `*` ở gần `int` hay `p_a` đều được. 
 
-- `int*` là kiểu con trỏ cho giá trị `int`, `double*` là kiểu con trỏ cho giá trị `double`, `string*` là kiểu con trỏ cho giá trị `string`, v.v..
 
 - Khai báo biến con trỏ cũng cần kiểu dữ liệu đi kèm, với `p_a` ở trên là `int*`, tức là **Con trỏ này trỏ tới 1 địa chỉ ô nhớ chứa giá trị integer**.
+
+- `int*` là kiểu con trỏ cho giá trị `int`, `double*` là kiểu con trỏ cho giá trị `double`, `string*` là kiểu con trỏ cho giá trị `string`, v.v..
 
 #### 2. Gán giá trị cho con trỏ
 
@@ -85,7 +86,7 @@ cout<<"Giá trị mới tại ô nhớ p_a: "<<*p_a<<endl
 
 - Lúc này giá trị tại vùng nhớ `p_a` thay đổi thành 100, và dĩ nhiên, do `p_a` cũng là địa chỉ của a, nên giá trị biến a cũng thay đổi theo luôn, cũng thành 100;
 
-#### Con trỏ trỏ đến con trỏ
+#### 4. Con trỏ trỏ đến con trỏ
 
 - Biến con trỏ như `p_a`, `p_b` thì vẫn cứ là một biến. Vì vậy khi khởi tạo biến đó hệ điều hành vẫn cấp phát 1 ô nhớ để lưu giá trị biến đó như thường.
 
@@ -111,7 +112,7 @@ void doicho(int *p_x, int *p_y) {
 
 int main() {
     int a = 5, b = 10;
-    doicho(&a, &b) // truyền 2 con trỏ kiểu int của a và b vào tham số của hàm.
+    doicho(&a, &b); // truyền 2 con trỏ kiểu int của a và b vào tham số của hàm.
 
     cout<<"a: "<<a<<endl
         <<"b: "<<b<<endl;
