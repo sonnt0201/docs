@@ -6,34 +6,22 @@ Con trỏ và mảng 1 chiều (C++ Pointer)
 Tổng quan
 ---------
 
-Bắt đầu với mảng 1 chiều mà mình vẫn hay dùng: 
-```cpp
-int a[3]; // mảng với 3 phần tử
-```
+- Con trỏ trong C++ rất quan trọng.
 
-Mọi khi nếu mình sử dụng mảng, mình luôn phải đi kèm với chỉ số `i` để lấy ra phần tử thứ `i` của mảng đó : `a[0], a[1], a[2], cout<<a[1], v.v..`.
+- Khi một biến được khai báo: `int a`, chương trình sẽ cấp cho biến `a` một ô nhớ trong bộ nhớ để lưu trữ giá trị của biến đó. Tùy vào kiểu dữ liệu mà biến (cũng như ô nhớ) đó được cấp bao nhiêu bytes (1 byte cho `char`, 4 bytes cho `int`, `float`, 8 bytes cho `double`, v.v.. ).
 
-Nhưng giờ nếu bỏ chỉ số đó đi, mình chỉ cần in ra mỗi tên mảng `a` như sau: 
+- Một con trỏ đại diện cho 1 ô nhớ trong bộ nhớ.
 
-```cpp
-int a[10];
-cout<<a<<endl; // không có chỉ số i
-```
-
-Sẽ thấy 1 giá trị kiểu như: `0x61ff00`, trông rất giống với 1 địa chỉ vùng nhớ.
+- Có thể truy cập, thay đổi giá trị trong 1 ô nhớ thông qua con trỏ.
 
 Chi tiết
 ---------
 
-### Tên mảng là một hằng địa chỉ
-
-- Bản thân `a` nếu không đi kèm với bất cứ chỉ số nào, nó luôn là **Con trỏ trỏ đến phần tử đầu tiên của mảng `a`**
-
--  Khi khai báo 1 mảng `int a[10]`, máy sẽ cung cấp 10 vùng nhớ liên tiếp
+### Biến con trỏ, các thao tác cơ bản
 
 #### 1. Khai báo
 
-- Biến con trỏ là thứ để lưu một vùng nhớ, là đại diện cho vùng nhớ đó.
+- Biến con trỏ là thứ để lưu một ô nhớ, là đại diện cho ô nhớ đó.
 
 ```cpp
 int a;
@@ -49,7 +37,7 @@ int *p_a;
 - Cũng có thể khai báo là `int* p_a;`, dấu `*` ở gần `int` hay `p_a` đều được. 
 
 
-- Khai báo biến con trỏ cũng cần kiểu dữ liệu đi kèm, với `p_a` ở trên là `int*`, tức là **Con trỏ này trỏ tới 1 địa chỉ vùng nhớ chứa giá trị integer**.
+- Khai báo biến con trỏ cũng cần kiểu dữ liệu đi kèm, với `p_a` ở trên là `int*`, tức là **Con trỏ này trỏ tới 1 địa chỉ ô nhớ chứa giá trị integer**.
 
 - `int*` là kiểu con trỏ cho giá trị `int`, `double*` là kiểu con trỏ cho giá trị `double`, `string*` là kiểu con trỏ cho giá trị `string`, v.v..
 
@@ -58,15 +46,15 @@ int *p_a;
 ```cpp
 p_a = &a;
 ```
-- Lúc này giá trị của `p_a` là địa chỉ vùng nhớ của biến a. 
+- Lúc này giá trị của `p_a` là địa chỉ ô nhớ của biến a. 
 
-- Thử `cout<<p_a<<endl;` sẽ ra kết quả trông giống kiểu `0x7ffe50758f5c` (giá trị cụ thể sẽ khác nhau do tùy vào bộ nhớ và cách hệ điều hành cấp phát, nhưng dạng giá trị sẽ như trên). Đây chính là địa chỉ vùng nhớ của biến `a`, cũng là giá trị biến `p_a`
+- Thử `cout<<p_a<<endl;` sẽ ra kết quả trông giống kiểu `0x7ffe50758f5c` (giá trị cụ thể sẽ khác nhau do tùy vào bộ nhớ và cách hệ điều hành cấp phát, nhưng dạng giá trị sẽ như trên). Đây chính là địa chỉ ô nhớ của biến `a`, cũng là giá trị biến `p_a`
 
 **Trong quá trình thực hiện các phép toán:** 
 
-- Dấu `&` để lấy địa chỉ vùng nhớ của biến, `&a`, `&b` tức là địa chỉ của `a`, địa chỉ của `b`, dùng cho mọi loại biến.
+- Dấu `&` để lấy địa chỉ ô nhớ của biến, `&a`, `&b` tức là địa chỉ của `a`, địa chỉ của `b`, dùng cho mọi loại biến.
 
-- Dấu `*` để lấy giá trị đang được lưu ở 1 vùng nhớ. Nó chỉ được dùng cho các biến con trỏ mà thôi: `*p_a`, `*p_b` tức là lấy giá trị đang được lưu tại vùng nhớ (con trỏ) `p_a` và `p_b`.
+- Dấu `*` để lấy giá trị đang được lưu ở 1 ô nhớ. Nó chỉ được dùng cho các biến con trỏ mà thôi: `*p_a`, `*p_b` tức là lấy giá trị đang được lưu tại ô nhớ (con trỏ) `p_a` và `p_b`.
 
 ```cpp
 int a = 5, b = 10, *p_a, *p_b; 
@@ -82,17 +70,17 @@ cout<<"Địa chỉ của a là: "<<p_a<<endl; // cũng là &a
 
 cout<<"Địa chỉ của b là: "<<p_b<<endl; // cũng là &b
 
-cout<<"Giá trị được lưu tại vùng nhớ p_a là: "<<*p_a<<endl; // in ra 5 - cũng là giá trị của a
+cout<<"Giá trị được lưu tại ô nhớ p_a là: "<<*p_a<<endl; // in ra 5 - cũng là giá trị của a
 
-cout<<"Giá trị được lưu tại vùng nhớ p_b là: "<<*p_b<<endl; // in ra 10 - cũng là giá trị của b
+cout<<"Giá trị được lưu tại ô nhớ p_b là: "<<*p_b<<endl; // in ra 10 - cũng là giá trị của b
 ```
 
-#### 3. Thay đổi giá trị của 1 vùng nhớ
+#### 3. Thay đổi giá trị của 1 ô nhớ
 
 - Hãy thử gán:
 ```cpp
 *p_a = 100;
-cout<<"Giá trị mới tại vùng nhớ p_a: "<<*p_a<<endl
+cout<<"Giá trị mới tại ô nhớ p_a: "<<*p_a<<endl
     <<"Giá trị mới của biến a: "<<a<<endl;
 ```
 
@@ -100,9 +88,9 @@ cout<<"Giá trị mới tại vùng nhớ p_a: "<<*p_a<<endl
 
 #### 4. Con trỏ trỏ đến con trỏ
 
-- Biến con trỏ như `p_a`, `p_b` thì vẫn cứ là một biến. Vì vậy khi khởi tạo biến đó hệ điều hành vẫn cấp phát 1 vùng nhớ để lưu giá trị biến đó như thường.
+- Biến con trỏ như `p_a`, `p_b` thì vẫn cứ là một biến. Vì vậy khi khởi tạo biến đó hệ điều hành vẫn cấp phát 1 ô nhớ để lưu giá trị biến đó như thường.
 
-- Vậy **con trỏ trỏ đến con trỏ** cũng chỉ là một vùng nhớ để lưu giá trị là dạng con trỏ ( thay vì lưu giá trị dạng `int` hay `double` như các biến con trỏ thường thấy ).
+- Vậy **con trỏ trỏ đến con trỏ** cũng chỉ là một ô nhớ để lưu giá trị là dạng con trỏ ( thay vì lưu giá trị dạng `int` hay `double` như các biến con trỏ thường thấy ).
 
 ```cpp
 int a = 5; //a là số nguyên giá trị 5
@@ -116,7 +104,7 @@ int **pp_a = &p_a // pp_a là con trỏ trỏ đến địa chỉ của biế
 
 ```cpp
 void doicho(int *p_x, int *p_y) {
-    // đổi chỗ hai giá trị lưu trong 2 vùng nhớ cho nhau
+    // đổi chỗ hai giá trị lưu trong 2 ô nhớ cho nhau
     int temp = *p_x;
     *p_x = *p_y;
     *p_y = temp;

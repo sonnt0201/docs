@@ -57,9 +57,9 @@ Kết quả là `a: 100` và `b: 100`, tương tự nếu gán giá trị
 
 #### Giải thích
 ***
-Khi khai báo 1 biến mới `int a = 5`, chương trình cấp phát cho biến đó 1 ô nhớ và lưu các giá trị của biến vào ô nhớ đó. Nếu chỉ khai báo biến kiểu tham trị `a = 5, b = a`, bộ nhớ sẽ cho 2 biến vào 2 ô nhớ khác nhau (dù ***giá trị tại ô nhớ*** là giống nhau do gán `b = a`).
+Khi khai báo 1 biến mới `int a = 5`, chương trình cấp phát cho biến đó 1 vùng nhớ và lưu các giá trị của biến vào vùng nhớ đó. Nếu chỉ khai báo biến kiểu tham trị `a = 5, b = a`, bộ nhớ sẽ cho 2 biến vào 2 vùng nhớ khác nhau (dù ***giá trị tại vùng nhớ*** là giống nhau do gán `b = a`).
 
-Khai báo theo kiểu tham chiếu giúp ***2 hay nhiều biến cùng trỏ tới 1 ô nhớ duy nhất***. Do đó, khi thay đổi 1 giá trị của biến, các biến tham chiếu khác đồng loạt thay đổi theo.
+Khai báo theo kiểu tham chiếu giúp ***2 hay nhiều biến cùng trỏ tới 1 vùng nhớ duy nhất***. Do đó, khi thay đổi 1 giá trị của biến, các biến tham chiếu khác đồng loạt thay đổi theo.
 
 #### Truyền tham số kiểu tham chiếu cho hàm
 ***
