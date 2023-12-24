@@ -110,7 +110,7 @@ void doicho(int *p_x, int *p_y) {
 
 int main() {
     int a = 5, b = 10;
-    doicho(&a, &b) // truyền 2 con trỏ kiểu int của a và b vào tham số của hàm.
+    doicho(&a, &b); // truyền 2 con trỏ kiểu int của a và b vào tham số của hàm.
 
     cout<<"a: "<<a<<endl
         <<"b: "<<b<<endl;
