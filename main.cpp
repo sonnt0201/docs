@@ -1,19 +1,22 @@
 #include <iostream>
 #include <set>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-int main() {
-  int pa[3];
-  
-  pa[0] = 1;
-  pa[1] = 2;
-  pa[2] = 10;
-
-  // cout<<(pa == &pa[0])<<endl;
-  cout<<pa<<endl;
-  // for (int i = 0; i < 3; i++) {
-  //   cout << pa[i] << endl;
-  // }
+void doicho(int a[2])
+{
+    int temp = a[0];
+    a[0] = a[1];
+    a[1] = temp;
 }
+
+int main() {
+    int a[2] = {5, 10}; // mảng với 2 giá trị là 5 và 10
+   for (auto& it = a.begin(); it != a.end() ;it++ ){
+    
+   }
+}
+
 
 // callback
