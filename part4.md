@@ -136,8 +136,6 @@ int main()
     // xóa 1 phần tử ở cuối
     vec.pop_back(); // => {2, 3, 5, 10}
 
-    // xóa một phần tử của vector, tham số là con trỏ trỏ tới vị trí cần xóa
-    vec.erase(vec + 1) // xóa phần tử với i = 1
 }
 ```
 
