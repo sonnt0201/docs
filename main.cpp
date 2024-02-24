@@ -1,23 +1,33 @@
 #include <iostream>
-#include <set>
-#include <vector>
-#include <algorithm>
+#include <stack>
+
 using namespace std;
-
-void doicho(int arr[2]) // arr là array - mảng được truyền vào hàm
-{
-    int temp = arr[0];
-    arr[0] = arr[1];
-    arr[1] = temp;
-}
-
 int main() {
-    int a[2] = {5, 10}; // mảng với 2 giá trị là 5 và 10
 
-    doicho(a);
+    // khởi tạo 1 stack
+    stack<int> stack;
 
-    cout<<"i = 0: "<<a[0]<<endl;
-    cout<<"i = 1: "<<a[1]<<endl;
+    // lấy số phần tử của stack
+    cout<<"size: "<<stack.size()<<"\n"; // 0
+
+    // thêm 1 phần tử vào stack, dùng push()
+    stack.push(10); // stack = {10}
+
+    // in ra top của stack
+    cout<<"top: "<<stack.top()<<"\n"; // top: 10
+    int val = 20;
+
+    stack.push(val); // stack = {20, 10}
+    cout<<"top: "<<stack.top()<<"\n"; // top: 20
+
+    stack.push(50);
+    stack.push(70); // stack = {70, 50, 20, 10}
+
+    // xóa top của stack, dùng hàm pop()
+    stack.pop(); // stack = {50, 20, 10}
+    stack.pop(); // stack = {20, 10}
+
+    cout<<"top: "<<stack.top()<<"\n";
 }
 
 
