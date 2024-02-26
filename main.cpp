@@ -1,34 +1,29 @@
 #include <iostream>
 #include <stack>
-
+#include <queue>
 using namespace std;
+
+void print(std::stack<int> stack) {
+
+    std::stack<int> temp = stack;
+    while(!temp.empty()) {
+        cout<<temp.top()<<endl;
+        temp.pop();
+    }
+}
+
 int main() {
 
-    // khởi tạo 1 stack
-    stack<int> stack;
+    std::stack<int> stack;
+    stack.push(10);
+    stack.push(20);
+    stack.push(30);
 
-    // lấy số phần tử của stack
-    cout<<"size: "<<stack.size()<<"\n"; // 0
+    print(stack);
 
-    // thêm 1 phần tử vào stack, dùng push()
-    stack.push(10); // stack = {10}
+    // cout<<stack.size()<<endl;
 
-    // in ra top của stack
-    cout<<"top: "<<stack.top()<<"\n"; // top: 10
-    int val = 20;
-
-    stack.push(val); // stack = {20, 10}
-    cout<<"top: "<<stack.top()<<"\n"; // top: 20
-
-    stack.push(50);
-    stack.push(70); // stack = {70, 50, 20, 10}
-
-    // xóa top của stack, dùng hàm pop()
-    stack.pop(); // stack = {50, 20, 10}
-    stack.pop(); // stack = {20, 10}
-
-    cout<<"top: "<<stack.top()<<"\n";
 }
 
 
-// callback
+// callbacksd

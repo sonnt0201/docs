@@ -146,3 +146,6 @@ Chi tiết về con trỏ và bộ nhớ sẽ nói trong phần sau.
 * * *
 
 🧑‍💻🧑‍💻🧑‍💻 Happy coding !!! 🧑‍💻🧑‍💻🧑‍💻
+
+| [Bài trước: C++ Set and Map Collection](part1.md)  | [Bài tiếp: Con trỏ vỡ lòng (C++ Pointer)](part3.md) |
+| ------------- | ------------- |

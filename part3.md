@@ -136,3 +136,6 @@ Trong C++ có mối quan hệ chặt chẽ giữa con trỏ và mảng: ca
 * * *
 
 🧑‍💻🧑‍💻🧑‍💻 Happy coding !!! 🧑‍💻🧑‍💻🧑‍💻
+
+| [Bài trước: Tham trị và tham chiếu](part2.md)  | [Bài tiếp: Con trỏ và mảng 1 chiều (C++ Pointer)](part4.md) |
+| ------------- | ------------- |

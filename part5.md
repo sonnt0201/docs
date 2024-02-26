@@ -48,255 +48,140 @@ stack<int> stack;
 - **push**, **pop** và lấy giá trị **top**: 
 
 ```cpp
-    // lấy số phần tử của stack
-    cout<<"size: "<<stack.size()<<"\n"; // 0
+// lấy số phần tử của stack
+cout<<"size: "<<stack.size()<<"\n"; // 0
 
-    // thêm 1 phần tử vào stack, dùng push()
-    stack.push(10); // stack = {10}
+// thêm 1 phần tử vào stack, dùng push()
+stack.push(10); // stack = {10}
 
-    // in ra top của stack
-    cout<<"top: "<<stack.top()<<"\n"; // top: 10
-    int val = 20;
+ // in ra top của stack
+cout<<"top: "<<stack.top()<<"\n"; // top: 10
+int val = 20;
 
-    stack.push(val); // stack = {20, 10}
-    cout<<"top: "<<stack.top()<<"\n"; // top: 20
+stack.push(val); // stack = {20, 10}
+cout<<"top: "<<stack.top()<<"\n"; // top: 20
 
-    stack.push(50);
-    stack.push(70); // stack = {70, 50, 20, 10}
+stack.push(50);
+stack.push(70); // stack = {70, 50, 20, 10}
 
     // xóa top của stack, dùng hàm pop()
-    stack.pop(); // stack = {50, 20, 10}
-    stack.pop(); // stack = {20, 10}
+stack.pop(); // stack = {50, 20, 10}
+stack.pop(); // stack = {20, 10}
 
-    cout<<"top: "<<stack.top()<<"\n";
-}
-
-
-// callback
-```
-
-
-### Lưu ý về `vector`
-
-- `vector` vẫn khác với mảng truyền thống. Nếu một hàm nhận một `vector` làm tham số, giá trị tham số (đối số) khi được truyền vào sẽ là truyền kiểu **tham trị**.
-
-- Bản thân tên biến của 1 `vector` ( như ví dụ trên là `vec` ) cũng không phải là con trỏ trỏ đến phần tử đầu tiên của mảng đó. Nó là tên và chỉ là tên mà thôi.
-
-- Do đó nếu muốn trỏ đến các phần tử của 1 `vector` thì người ta dùng phép lấy con trỏ (`&vec[0]`, `&vec[1]`) hoặc cách được khuyến khích hơn là dùng `iterator`.
-
-### Các nguồn tham khảo:
-
-- Kỹ Thuật Lập trình C Cơ sở và Nâng cao - Gs.Phạm Văn Ất
-
-- [W3 School Doc](https://www.w3schools.com/cpp/cpp_pointers.asp)
-
-- [Tổng hợp vector trong C++](https://topdev.vn/blog/vector-trong-c/)
-* * *
-
-🧑‍💻🧑‍💻🧑‍💻 Happy coding !!! 🧑‍💻🧑‍💻🧑‍💻
-
-
-Chi tiết
----------
-
-### Tên mảng là một hằng địa chỉ
-***
-- Bản thân `a` nếu không đi kèm với bất cứ chỉ số nào, nó luôn là **Con trỏ trỏ đến phần tử đầu tiên của mảng `a`**
-
--  Khi khai báo 1 mảng `int a[10]`, máy sẽ cung cấp 10 vùng nhớ liên tiếp để lưu trữ giá trị của mảng đó, bắt đầu bằng `&a[0]` hay `a`
-
-```cpp
-cout<<(&a[0] == a)<<endl; // true - 1
-
-cout<<(a[0] == *a)<<endl; // cũng là true - 1
-```
-
-Các con trỏ kế tiếp `a` (hay `&a[0]`) lần lượt là các phần tử tiếp theo của mảng.
-
-Có thể dịch tới con trỏ kế tiếp (hoặc trước đó) bằng các phép cộng, trừ biến con trỏ cho một số nguyên
-
-```cpp
-int a[5] = {7, 5, 4, 8, 9 }; // mảng với 5 phần tử
-
-int *pa = a; //con trỏ trỏ đến phần tử đầu tiên của mảng a;
-
-cout<<"i = 0: "<<*pa<<endl; // 7 - phần tử đầu tiên, cũng là a[0]
-
-pa++; // dịch con trỏ tới vùng nhớ tiếp theo, cũng là vùng nhớ của a[1]
-
-cout<<"i = 1: "<<*pa<<endl; // 5, cũng là a[1]
-
-pa = pa + 2; //dịch 2 vùng nhớ tiếp, cũng là  dịch tới vùng nhớ của a[3]
-
-cout<<"i = 3: "<<*pa<<endl; // 8, cũng là a[3]
+cout<<"top: "<<stack.top()<<"\n";
 
 ```
 
+- Một vài hàm khác:
+    
+    `empty()` để kiểm tra stack có rỗng hay không.
+    
+    `swap()`  để đổi giá trị 2 stack cho nhau.
 
-
-Như vậy, với mảng thông thường:
-- `a` tương đương với `&a[0]`
-- `a + i` tương đương với `&a[i]`
-- `*(a + i)` tương đương với `a[i]`
-
-### Hàm với tham số của hàm là 1 mảng
-
-- Quay trở lại với ví dụ của phần [**Tham trị và tham chiếu**](part2.md)
 ```cpp
-void doicho(int x, int y)
-{
-    int temp = x;
-    x = y;
-    y = temp;
-}
+  
+std::stack<int> stack2;
+stack2.push(100);
+stack2.push(200); // stack2 = {200, 100}
+
+stack2.swap(stack); // stack2 = {20, 10}, stack = {200, 100}
 ```
+### In ra các phần tử
 
-- Hiển nhiên 2 tham số của hàm trên là truyền kiểu **tham trị**, không gây ảnh hưởng tới các biến bên ngoài. Phải có dấu `&` mới là truyền **tham chiếu**
-
-- Nhưng nếu tham số của 1 hàm là mảng 
-
-```cpp
-
-// hàm đổi chỗ giá trị 2 phần tử đầu tiên của mảng
-void doicho(int arr[2]) // arr là array - mảng được truyền vào hàm
-{
-    int temp = arr[0];
-    arr[0] = arr[1];
-    arr[1] = temp;
-}
-
-int main() {
-    int a[2] = {5, 10}; // mảng với 2 giá trị là 5 và 10
-
-    doicho(a);
-
-    cout<<"i = 0: "<<a[0]<<endl;
-    cout<<"i = 1: "<<a[1]<<endl;
-}
-```
-
-- Thật bất ngờ 😎, giá trị 2 phần tử đầu tiên của mảng đã đổi chỗ cho nhau. Cho dù ta không dùng dấu `&` tham trị ở phần khai báo hàm : `void doicho(int a[2])`.
-
-- **Lý do**: `a` chính là con trỏ trỏ đến phần tử đầu tiên của mảng, cũng là con trỏ trỏ tới mảng đó. Truyền `a` vào hàm cũng chính là truyền con trỏ vào hàm, do đó có thể thay đổi được giá trị của `a` bên trong hàm đó.
-
-=> Hiệu ứng đem lại giống như hàm với tham số kiểu tham chiếu
-
-=> Nếu tham số của hàm là 1 mảng, thì khi gọi hàm sẽ luôn truyền mảng theo kiểu **tham chiếu**.
-
-### Mảng động và cấp phát mảng động
-***
-- Mảng động là một mảng, nhưng chưa được cố định trước số phần tử, khi nào mình muốn thêm phần tử thì mình xin thêm vùng nhớ.
-
-=> Chỉ lấy chính xác lượng vùng nhớ mình cần.
-
-- Việc cấp phát mảng động bằng C++ có thể thực hiện như [**hướng dẫn sau**](https://howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/cap-phat-mang-dong-dynamically-allocating-arrays-2743). Tuy nhiên em muốn gợi ý 1 cách tốt hơn để làm mảng động là dùng `vector`
-
-#### Sử dụng `std::vector` 
-
-- Cần thêm thư viện `<vector>`
+- Do đặc trưng của stack, nếu muốn in ra tuần tự các phần tử trong stack thì không duyệt vòng `for` thông thường được. Thay vào đó phải tự làm 1 hàm để **pop** từng phần tử stack ra để in ra:
 
 ```cpp
-#include <vector>
-using namespace std;
-int main()
-{
-    vector<int> vec = {2, 3, 5};
-    // Thêm 1 phần tử vào cuối 
-    vec.push_back(10); 
-    vec.push_back(15); // => {2, 3, 5, 10, 15}
+void print(std::stack<int> stack) {
+    std::stack<int> temp = stack;
 
-    // xóa 1 phần tử ở cuối
-    vec.pop_back(); // => {2, 3, 5, 10}
-
-}
-```
-
-### Iterator 
-***
-- `Iterator` là một đối tượng trỏ tới một phần tử trong `vector`. Thông qua Iterator, ta có thể duyệt lần lượt các phần tử của mảng.
-
-- Có thể hiểu Iterator là **Một loại con trỏ**, trỏ đến các phần tử của mảng đó.
-
-- Với `vector`, có 2 Iterator hay gặp nhất: `vec.begin()` trỏ tới phần tử đầu tiên của mảng và `vec.end()` trỏ tới **vị trí ngay sau phần tử cuối cùng của mảng**.
-
-(Vị trí **ngay sau** phần tử cuối cùng chứ không phải phần tử cuối cùng)
-
-- `vec.begin()` và `&vec[0]` có vẻ rất giống nhau, đều để trỏ đến phần tử đầu tiên của mảng, nhưng thực ra chúng có khác nhau. Một vài trường hợp có thể hai cái giống nhau, ví dụ với vòng `for`:
-
-```cpp
-    vector<int> vec = {1, 3, 5, 9, 4};
-    int n = 5; // số phần tử mảng
-    sort(&vec[0], &vec[0] + n); // sắp xếp
-    for (vector<int>::iterator it = vec.begin; i != vec.end(); it++) {
-        cout<<*it;
+    while(!temp.empty()) {
+        cout<<temp.top()<<endl;
+        temp.pop();
     }
-```
-
-Sẽ giống hệt với đoạn code sau:
-
-```cpp
- vector<int> vec = {1, 3, 5, 9, 4};
-
-int n = 5;
-     
-sort(vec.begin(), vec.end()); // sắp xếp
-for (int* p = &vec[0]; p <= &vec[4]; p++) {
-        cout<<*p<<endl;
 }
 ```
 
-- Những hầu hết các trường hợp khác, con trỏ thuần và `iterator` là hai thứ khác nhau. Có nhiều hàm chỉ nhận `iterator` (không phải con trỏ) làm tham số :
+Hàng đợi (Queue)
+--------
 
-    - `vec.size()` lấy kích cỡ - số phần tử.
+### Khái niệm
+Hàng đợi giống như một đoàn người xếp hàng đợi mua đồ: ai đến trước thì mua trước và ra trước, ai đến sau thì ra sau. 
 
-    - `vec.insert(position, value)`: chèn 1 phần tử có giá trị `value` vào vị trí trước vị trí được trỏ bởi `position`. `position` là kiểu `iterator`
+Khi thêm 1 người vào hàng, ta sẽ thêm ở cuối hàng. Khi loại bỏ 1 người, ta sẽ loại người ở đầu hàng.
 
-    ```cpp
-    vec.insert(vec.begin(), 10); // chèn 10 vào đầu vector, những phần tử cũ bị đẩy hết về phía sau 1 đơn vị
+Như vậy hàng đợi là kiểu danh sách với 2 phép toán: **thêm phần tử ở cuối hàng** và **bỏ phần tử ở đầu hàng**.
 
-    // vector mới: {10, 1, 3, 5, 9, 4}
+Một vài khái niệm:
+- Phần tử cuối hàng được gọi là **rear** hoặc **back**.
+- Phần tử đầu hàng được gọi là **front**.
+- Việc thêm phần tử được gọi là **push**.
+- Việc xóa phần tử được gọi là **pop**
 
-    vec.insert(vec.begin() + 3, 100); // chèn 100 vào vị trí i = 3, những giá trị đằng sau đều bị đẩy đi 1 đơn vị
+### Hàng đợi với C++
 
-    // vector mới: {10, 1, 3, 100, 5, 9, 4}
-    ```
+Thêm thư viện:
+```cpp
+#include <queue>
+```
 
-    - `vec.erase(position)`: xóa 1 phần tử của `vec` ở vị trí `position`, `position` là `iterator`
+Khởi tạo 1 hàng đợi rỗng:
 
-    - `vec.erase(start, end)`: xóa 1 khoảng phần tử của `vec` từ `start` tới `end`. ` start` và `end` đều là `iterator`.
+```cpp
+// khởi tạo 1 queue
+std::queue<int> q;
+cout<<"size: "<<q.size()<<endl; //0
+```
 
-    ```cpp
-    // vector là: {10, 1, 3, 100, 5, 9, 4}
+`push` và `pop` cùng với `front` và `back`:
 
-    vec.erase(vec.begin()) // xóa phần tử đầu tiên
+```cpp
+ // thêm phần tử vào back
+q.push(10);
+q.push(20);
+q.push(30); // q = {10, 20, 30}
 
-    // vec mới: {1, 3, 100, 5, 9, 4}
+cout<<"front: "<<q.front()<<endl; //10
+cout<<"back: "<<q.back()<<endl; //30
 
-    vec.erase(vec.begin() + 1, vec.begin() + 3) //xóa 1 khoảng từ i = 1 tới i = 3
+// xóa phần tử ở front:
+q.pop();
 
-    //vec mới: {1, 9, 4}
-    ```
+cout<<"new front: "<<q.front()<<endl; //20;
+```
 
-    - Một vài hàm khác xem [**tại đây**](https://topdev.vn/blog/vector-trong-c/).
+C++ queue cũng có hàm `empty()` và `swap()` với chức năng giống với bên stack: 
+    
+- `empty()` để kiểm tra queue có rỗng hay không.
+    
+- `swap()`  để đổi giá trị 2 queue cho nhau.
 
+### In ra các phần tử
 
+- Do đặc trưng của stack, nếu muốn in ra tuần tự các phần tử trong stack thì không duyệt vòng `for` thông thường được. Thay vào đó phải tự làm 1 hàm để **pop** từng phần tử stack ra để in ra:
 
+```cpp
+void print(std::stack<int> stack) {
+    std::stack<int> temp = stack;
 
-### Lưu ý về `vector`
+    while(!temp.empty()) {
+        cout<<temp.top()<<endl;
+        temp.pop();
+    }
+}
+```
 
-- `vector` vẫn khác với mảng truyền thống. Nếu một hàm nhận một `vector` làm tham số, giá trị tham số (đối số) khi được truyền vào sẽ là truyền kiểu **tham trị**.
+## Các nguồn tham khảo:
 
-- Bản thân tên biến của 1 `vector` ( như ví dụ trên là `vec` ) cũng không phải là con trỏ trỏ đến phần tử đầu tiên của mảng đó. Nó là tên và chỉ là tên mà thôi.
+- Giải Thuật và Lập Trình - Lê Minh Hoàng.
 
-- Do đó nếu muốn trỏ đến các phần tử của 1 `vector` thì người ta dùng phép lấy con trỏ (`&vec[0]`, `&vec[1]`) hoặc cách được khuyến khích hơn là dùng `iterator`.
+- [Stack in C++ STL](https://www.geeksforgeeks.org/stack-in-cpp-stl/)
 
-### Các nguồn tham khảo:
-
-- Kỹ Thuật Lập trình C Cơ sở và Nâng cao - Gs.Phạm Văn Ất
-
-- [W3 School Doc](https://www.w3schools.com/cpp/cpp_pointers.asp)
-
-- [Tổng hợp vector trong C++](https://topdev.vn/blog/vector-trong-c/)
+- [Queue in C++ STL](https://www.geeksforgeeks.org/queue-cpp-stl/)
 * * *
 
 🧑‍💻🧑‍💻🧑‍💻 Happy coding !!! 🧑‍💻🧑‍💻🧑‍💻
+
+| [Bài trước: Con trỏ và mảng 1 chiều (C++ Pointer)](part4.md)  | |
+| ------------- | ------------- |
+
+

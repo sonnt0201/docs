@@ -228,3 +228,6 @@ for (int* p = &vec[0]; p <= &vec[4]; p++) {
 * * *
 
 🧑‍💻🧑‍💻🧑‍💻 Happy coding !!! 🧑‍💻🧑‍💻🧑‍💻
+
+| [Bài trước: Con trỏ vỡ lòng](part3.md)  | [Bài tiếp: Ngăn xếp và hàng đợi (Stack and Queue)](part5.md) |
+| ------------- | ------------- |
