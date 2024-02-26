@@ -117,7 +117,7 @@ Kết quả sẽ như ý muốn : `a: 20` `b: 10`.
 Đoạn code sử dụng `auto& phantu : taphop` thay vì chỉ `auto phantu : taphop`. Đây cũng là lấy kiểu tham chiếu, nếu bên trong vòng `for` thay đổi giá trị của `phantu` chẳng hạn
 
 ```cpp
-for (auto &phantu : taphop) { /* Lưu ý đây là lấy kiểu THAM CHIẾU */ 
+for (auto &phantu : taphop) { 
         phantu++;
 } 
 ```
