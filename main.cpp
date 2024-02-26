@@ -12,15 +12,23 @@ void print(std::stack<int> stack) {
     }
 }
 
+void print(std::queue<int> queue) {
+
+    std::queue<int> temp = queue;
+    while(!temp.empty()) {
+        cout<<temp.front()<<endl;
+        temp.pop();
+    }
+}
+
 int main() {
 
-    std::stack<int> stack;
-    stack.push(10);
-    stack.push(20);
-    stack.push(30);
+    std::queue<int> q;
+    q.push(10);
+    q.push(20);
+    q.push(30);
 
-    print(stack);
-
+    print(q);
     // cout<<stack.size()<<endl;
 
 }

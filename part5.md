@@ -157,17 +157,18 @@ C++ queue cũng có hàm `empty()` và `swap()` với chức năng giốn
 
 ### In ra các phần tử
 
-- Do đặc trưng của stack, nếu muốn in ra tuần tự các phần tử trong stack thì không duyệt vòng `for` thông thường được. Thay vào đó phải tự làm 1 hàm để **pop** từng phần tử stack ra để in ra:
+- Do đặc trưng của queue, nếu muốn in ra tuần tự các phần tử trong queue thì không duyệt vòng `for` thông thường được. Thay vào đó phải tự làm 1 hàm để **pop** từng phần tử queue ra để in ra:
 
 ```cpp
-void print(std::stack<int> stack) {
-    std::stack<int> temp = stack;
+void print(std::queue<int> queue) {
 
+    std::queue<int> temp = queue;
     while(!temp.empty()) {
-        cout<<temp.top()<<endl;
+        cout<<temp.front()<<endl;
         temp.pop();
     }
 }
+
 ```
 
 ## Các nguồn tham khảo:
