@@ -34,12 +34,12 @@ Khi mô tả Stack:
 
 ### Stack với `C++` 
 ***
-- Miễn là tuân heo nguyên tắc trên, ta sẽ có Stack. Như vậy, ta hoàn toàn có thể tự tạo ra kiểu Stack trong `C++` với những công cụ đã biết (`Array` hoặc `Vector` hoặc Danh sách liên kết) và các hàm ta tự viết. Hoặc chúng ta có thể dùng sẵn thư viện `stack` của `C++`:
+- Miễn là tuân theo nguyên tắc trên, ta sẽ có Stack. Như vậy, ta hoàn toàn có thể tự tạo ra kiểu Stack trong `C++` với những công cụ đã biết (`Array` hoặc `Vector` hoặc Danh sách liên kết) và các hàm ta tự viết. Hoặc chúng ta có thể dùng sẵn thư viện `stack` của `C++`:
 ```cpp
 #include <stack>
 ```
 
-- Tạo 1 Stack mới chứa các giá trị cùng kiểu(với ví dụ dưới là kiểu `int`).
+- Tạo 1 Stack mới chứa các giá trị cùng kiểu (với ví dụ dưới là kiểu `int`).
 
 ```cpp
 stack<int> stack;
@@ -88,7 +88,7 @@ stack2.swap(stack); // stack2 = {20, 10}, stack = {200, 100}
 ```
 ### In ra các phần tử
 
-- Do đặc trưng của stack, nếu muốn in ra tuần tự các phần tử trong stack thì không duyệt vòng `for` thông thường được. Thay vào đó phải tự làm 1 hàm để **pop** từng phần tử stack ra để in ra:
+- Do đặc trưng của stack, nếu muốn in ra tuần tự các phần tử trong stack thì không duyệt vòng `for` thông thường được. Thay vào đó phải tự làm 1 hàm để **pop** từng phần tử stack, rồi in ra:
 
 ```cpp
 void print(std::stack<int> stack) {
@@ -157,7 +157,7 @@ C++ queue cũng có hàm `empty()` và `swap()` với chức năng giốn
 
 ### In ra các phần tử
 
-- Do đặc trưng của queue, nếu muốn in ra tuần tự các phần tử trong queue thì không duyệt vòng `for` thông thường được. Thay vào đó phải tự làm 1 hàm để **pop** từng phần tử queue ra để in ra:
+- Do đặc trưng của queue, nếu muốn in ra tuần tự các phần tử trong queue thì không duyệt vòng `for` thông thường được. Thay vào đó phải tự làm 1 hàm để **pop** từng phần tử queue, rồi in ra:
 
 ```cpp
 void print(std::queue<int> queue) {
