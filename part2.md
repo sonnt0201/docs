@@ -127,7 +127,7 @@ Thì phần tử bên trong `taphop` sẽ thực sự tăng lên 1.
 
 Nếu dùng tham trị:
 ```cpp
-for (auto phantu : taphop) { /* Lưu ý đây là lấy kiểu THAM CHIẾU */ 
+for (auto phantu : taphop) { 
         phantu++;
 } 
 ```
