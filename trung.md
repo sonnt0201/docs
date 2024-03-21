@@ -74,6 +74,8 @@ Xét `a[2] = -3`. Sẽ có 2 TH với **dãy con có tổng lớn nhất kết t
  
  - Hoặc là mình sẽ cho thằng `a[2]` đứng riêng 1 dãy.
 
+ Do `b = [3, -1]` vốn dĩ là dãy con ngon nhất khi xét tới `i - 1` rồi nên là chỉ có 1 trong hai cách ghép trên thôi. Hoặc là ông đứng vào **cái cũ ngon nhất**, hoặc ông tự đứng 1 mình.
+
  - => Chọn 1 trong 2 cách trên mà ra được con tổng ngon hơn.
 
  ```cpp
