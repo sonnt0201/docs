@@ -3,9 +3,17 @@ Tìm dãy con có tổng lớn nhất
 
 Đề bài
 --------------
-Cho một dãy số nguyên `a = [ a0, a1, a2, ..., an]`. Một dãy con liên tiếp của a là dãy `sub_a = [ ai, ... , aj]` với `i` và `j` nằm trong khoảng từ 0 đến n.
+Cho một dãy số nguyên `a = [ a0, a1, a2, ..., a(n - 1)]`. Một dãy con liên tiếp của a là dãy `sub_a = [ ai, ... , aj]` với `i` và `j` nằm trong khoảng từ 0 đến n.
 Tìm dãy con liên tiếp có tổng các phần tử trong dãy là lớn nhất.
 
+VD:
+```
+input
+10
+3 -1 -3 5 2 5 0 -1 5 4
+output
+20
+```
 Khái niệm
 ----------------
 ### **Dãy con liên tiếp**: 
