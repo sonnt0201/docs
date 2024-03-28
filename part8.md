@@ -72,6 +72,56 @@ Có `n` lần tham số `n` bị giảm đi 1, cũng là có `n` lần biến `p
 Sơ đồ luồng gọi với n = 3
 -------
 **Lưu ý `p` viết tắt cho `prefix`**
+
+
+```mermaid
+graph TD
+
+a[gen<3, ''>
+  n = 3; p = rỗng] --> a0{gen<2, '0'>
+  n = 2; p = 0}
+
+a --> a1{gen<2, '1'>
+  n = 2; p = 1}
+
+a0 --> a00{gen<1, '00'>
+  n = 1; p = 00}
+
+a0 --> a01{gen<1, '01'>
+  n = 1; p = 01}
+
+a1 --> a10{gen<1, '10'>
+  n = 1; p = 10}
+
+a1 --> a11{gen<1, '11'>
+  n = 1; p = 11}
+
+a00 --> a000{gen<0, '000'>
+  n = 0; in ra p}
+
+a00 --> a001{gen<0, '001'>
+  n = 0; in ra p}
+
+a01 --> a010{gen<0, '010'>
+  n = 0; in ra p}
+
+a01 --> a011{gen<0, '011'>
+  n = 0; in ra p}
+
+a10 --> a100{gen<0, '100'>
+  n = 0; in ra p}
+
+a10 --> a101{gen<0, '101'>
+  n = 0; in ra p}
+
+a11 --> a110{gen<0, '110'>
+  n = 0; in ra p}
+
+a11 --> a111{gen<0, '111'>
+  n = 0; in ra p}
+
+```
+
 ![console](binrary-tree.svg) 
 
 * * *
