@@ -122,7 +122,6 @@ a11 --> a111{gen<0, '111'>
 
 ```
 
-![console](binrary-tree.svg) 
 
 * * *
 
