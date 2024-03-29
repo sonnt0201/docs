@@ -81,5 +81,5 @@ Khi gọi `f(3)` ở chương trình chính:
 
 🧑‍💻🧑‍💻🧑‍💻 Happy coding !!! 🧑‍💻🧑‍💻🧑‍💻
 
-| [Bài trước: Tìm dãy con có tổng lớn nhất](part7.md)  |[Bài tiếp: Đệ quy với bài toán xuất ra các số nhị phân n chữ số](part8.md)  |
+| [Bài trước: Tìm dãy con có tổng lớn nhất](part6.md)  |[Bài tiếp: Đệ quy với bài toán xuất ra các số nhị phân n chữ số](part8.md)  |
 | ------------- | ------------- |
