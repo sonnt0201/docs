@@ -4,17 +4,44 @@
 using namespace std;
 // n không âm
 
-int f(int n) {
+void gen(int k, int n, int arr[])
+{
 
-    if (n == 1) return 1; // giai thừa của 1 
+    if (k == n)
+    {
+        for (int i = 1; i <= n; i++)
+            cout << arr[i] << " ";
+        cout << "\n";
+    }
 
+    bool kt[100] = {false};
 
-    // nếu n lớn hơn 1
-    return (f(n - 1) * n); // giai thừa của (n - 1) rồi nhân n.
-};
+    for (int i = 1; i <= k; i++)
+        kt[arr[i]] = true;
 
-int main() {
-    int n = 3;
-    cout<<f(n)<<endl;
+    int next[100] = {};
 
+    // copy
+    for (int j = 1; j <= k; j++)
+        next[j] = arr[j];
+
+    for (int i = 1; i <= n; i++)
+        if (kt[i] == false)
+        {
+            next[k + 1] = i;
+
+            // recursion
+            gen(k + 1, n, next);
+        }
+}
+int main()
+{
+    int arr[100], n;
+    cin >> n;
+
+    for (int i = 1; i <= n; i++)
+    {
+        arr[1] = i;
+        gen(1, n, arr);
+    }
 }
