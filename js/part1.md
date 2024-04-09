@@ -206,6 +206,9 @@ Kết quả in ra y hệt mà không cần `callback`
 
 - Việc dùng `callback` rất quan trọng khi code JS và các ngôn ngữ hiện đại, khi mà cần sử dụng hàm bất đồng bộ và lập trình theo kiểu hướng sự kiện.
 
+## Các nguồn tham khảo:
+[W3 School Doc: Callback](https://www.w3schools.com/js/js_callback.asp)  
+
 * * *
 
 🧑‍💻🧑‍💻🧑‍💻 Happy coding !!! 🧑‍💻🧑‍💻🧑‍💻
