@@ -8,7 +8,9 @@
 
 Sử dụng **callback** cho phép một hàm gọi ra một hàm khác.
 
-**Callback** cũng là 1 hàm bình thường trong javascript thôi, nhưng cách sử dụng nó, cụ thể là việc biến nó thành tham số của hàm khác, khiến nó trở thành 1 **callback**.
+**Callback** cũng là 1 hàm bình thường trong javascript
+
+Cách sử dụng nó, cụ thể là việc biến nó thành tham số của hàm khác, khiến nó trở thành 1 **callback**.
 
 ## Chi tiết
 
@@ -29,9 +31,9 @@ function example(a, b, callback) {
 }
 ```
 
-Với `callback` là 1 hàm, như vậy về khai báo `callback`, cứ coi hàm `callback` như một tham số bình thường và truyền tên hàm đó vào là được.
+Với `callback` là 1 hàm, như vậy về khai báo `callback`, cứ coi `callback` như một tham số bình thường và truyền tên hàm đó vào là được.
 
-Hàm bên ngoài (với ví dụ trên là hàm `example`) có thể gọi `callback` bên trong thân hàm.
+Hàm bên ngoài (với ví dụ trên là `example`) có thể gọi `callback` bên trong thân hàm.
 
 ```javascript
 function example(a, b, callback) {
@@ -170,6 +172,58 @@ Cách khai báo trực tiếp này là cách thông dụng khi dùng `callback`.
 
 Dĩ nhiên cũng không nhất thiết phải gọi `callback` ở cuối hàm, tùy vào ý đồ của người code mà gọi `callback` ở đâu trong thân hàm.
 
+### `Callback` với arrow function
+
+Mọi người nên làm quen với việc khai báo `callback` ngay trong lúc gọi hàm cũng như việc dùng arrow function.
+
+- Khai báo `callback` ngoài hàm
+
+```js
+// khai bao callback
+const printSquare = (x) => console.log("Bình phương là: " x * x)
+
+const printSum = (a, b, callback) => {
+  const s = a + b
+  console.log("Tổng là: " + s)
+  callback(s)
+}
+
+// gọi hàm
+const a = 2, b = 3
+
+printSum(a, b, printSquare)
+
+```
+
+Log:
+
+```shell
+>>Tổng là: 5
+>>Bình phương là: 25
+```
+
+- Khai báo `callback` ngay lúc gọi. Mọi người làm quen với cách này vì sẽ gặp rất nhiều.
+
+```js
+const printSum = (a, b, callback) => {
+  const s = a + b;
+  console.log("Tổng là: " + s);
+  callback(s);
+};
+
+// gọi hàm
+const a = 2,
+  b = 3;
+
+printSum(a, b, (s) => console.log("Bình phương là: " + s*s));
+```
+
+Log: 
+```shell
+>>Tổng là: 5
+>>Bình phương là: 25
+```
+
 ## Tại sao phải có `callback`
 
 Xét đoạn code trên, rõ ràng thay vì phải viết hàm lồng hàm cồng kềnh thì hoàn toàn có thể gọi tuần tự từng hàm 1 là được.
@@ -195,7 +249,7 @@ const a = 2,
   b = 3;
 
 const s = printSum(a, b);
-printSquare(s)
+printSquare(s);
 ```
 
 Kết quả in ra y hệt mà không cần `callback`
@@ -207,9 +261,9 @@ Kết quả in ra y hệt mà không cần `callback`
 - Việc dùng `callback` rất quan trọng khi code JS và các ngôn ngữ hiện đại, khi mà cần sử dụng hàm bất đồng bộ và lập trình theo kiểu hướng sự kiện.
 
 ## Các nguồn tham khảo:
-[W3 School Doc: Callback](https://www.w3schools.com/js/js_callback.asp)  
 
-* * *
+[W3 School Doc: Callback](https://www.w3schools.com/js/js_callback.asp)
+
+---
 
 🧑‍💻🧑‍💻🧑‍💻 Happy coding !!! 🧑‍💻🧑‍💻🧑‍💻
-
