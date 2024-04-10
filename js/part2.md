@@ -1,18 +1,15 @@
-JS Asynchronous (Bất đồng bộ)
-========================
+# JS Asynchronous (Bất đồng bộ)
 
 > "I will finish later !".
 > Cứ chạy tiếp đi, tôi sẽ hoàn thành việc này sau.
 
-Tổng quan
-----------
+## Tổng quan
 
 Một hàm bất đồng bộ (`asynchronous function` | `async func`) là hàm mà khi được gọi ra sẽ được ném cho một luồng khác để xử lý.
 
 Trong khi đó, luồng chính vừa gọi hàm sẽ tiếp tục chạy dòng lệnh tiếp theo mà không thèm đợi `async func` kia thực hiện xong.
 
-Chức năng 
--------------
+## Chức năng
 
 Với tính chất trên, có thể thấy rõ chức năng của `async func` là để chương trình có thể chạy được nhiều task cùng một lúc.
 
@@ -20,12 +17,11 @@ Những tác vụ dài, mất tương đối nhiều thời gian, hoặc những
 
 > "Anh cứ chạy câu lệnh tiếp theo đi, tôi sẽ hoàn thành cái này sau."
 
-Hoặc `async func` được dùng trong lập trình hướng sự kiện: `event-driven programming (EDP)`. Thay vì chạy tuần tự các câu lệnh theo 1 luồng định sẵn, tôi sẽ ngồi "trực" cho 1 sự kiện xảy ra: click 1 nút, nhập 1 phím, hay nhận 1 message từ chương trình khác, hay khi 1 file đã được tải xong, v.v.. 
+Hoặc `async func` được dùng trong lập trình hướng sự kiện: `event-driven programming (EDP)`. Thay vì chạy tuần tự các câu lệnh theo 1 luồng định sẵn, tôi sẽ ngồi "trực" cho 1 sự kiện xảy ra: click 1 nút, nhập 1 phím, hay nhận 1 message từ chương trình khác, hay khi 1 file đã được tải xong, v.v..
 
 Tôi sẽ có 1 đống `async func` trực những sự kiện như thế, và khi sự kiện đó xảy ra, tôi sẽ gọi 1 `callback` tương ứng.
 
-Callback
---------
+## Callback
 
 Việc ném 1 tác vụ dài sang luồng mới, không đợi tác vụ đó hoàn thành mà nhảy luôn sang câu lệnh tiếp theo thì khá là tiện. Tuy nhiên câu hỏi đặt ra là
 
@@ -35,15 +31,14 @@ Việc ném 1 tác vụ dài sang luồng mới, không đợi tác vụ đó ho
 
 Nếu thằng `callback` cũng là 1 `async func` và ta lại muốn gọi một hàm khác sau khi thằng `callback` kia kết thúc, thì ta sẽ lại truyền một `callback` mới vào `callback` => `callback` lồng nhau.
 
-
-Một ví dụ điển hình: Hàm `setTimeout`
-------------------
+## Một ví dụ điển hình: Hàm `setTimeout`
 
 Hàm `setTimeout` cho phép chương trình đợi trong 1 khoảng thời gian rồi sau đó mới thực hiện các câu lệnh được yêu cầu.
 
-Cú pháp: 
+Cú pháp:
+
 ```js
-setTimeout(callback, time)
+setTimeout(callback, time);
 ```
 
 gồm 2 tham số với tham số thứ nhất là `callback`, tham số thứ 2 `time` là thời gian (tính theo milli giây) mà hàm sẽ đợi.
@@ -51,28 +46,30 @@ gồm 2 tham số với tham số thứ nhất là `callback`, tham số thứ 2
 **Sau khoảng thời gian là `time`, hàm `callback` sẽ được gọi**
 
 VD:
+
 ```js
 //index.js
 setTimeout(() => {
-    console.log("I have been waiting for you for 3 seconds")
-}, 3000)
+  console.log("I have been waiting for you for 3 seconds");
+}, 3000);
 ```
 
 Chạy dòng lệnh trên, sẽ thấy chương trình ngưng 3 giây rồi mới `log` ra đoạn text.
 
 Thử thêm 1 dòng lệnh tiếp theo sau `setTimeout`
-```js
 
+```js
 //index.js
 setTimeout(() => {
-    console.log("I have been waiting for you for 3 seconds")
-}, 3000)
+  console.log("I have been waiting for you for 3 seconds");
+}, 3000);
 
-console.log("I don't need to wait")
+console.log("I don't need to wait");
 ```
+
 Nếu theo đúng tuần tự câu lệnh mà ta code thì nó phải đợi 3 giây để in ra `"I have been waiting for you for 3 seconds"` rồi mới `log` ra `"I don't need to wait"`.
 
-Tuy nhiên dòng `log` thứ 2 lại xuất hiện trước: 
+Tuy nhiên dòng `log` thứ 2 lại xuất hiện trước:
 
 ```shell
 log:
@@ -91,31 +88,48 @@ Thứ gọi 2 hàm `setTimeout` như thế.
 
 // first timeout
 setTimeout(() => {
-    console.log("I have been waiting for you for 3 seconds")
-}, 3000)
+  console.log("I have been waiting for you for 3 seconds");
+}, 3000);
 
 // second timeout
 setTimeout(() => {
-    console.log("And so does my friend")
-}, 3000)
-
-
+  console.log("And so does my friend");
+}, 3000);
 ```
 
-Cả hai câu lệnh `setTimeout` đều là `async func` nên chương trình sẽ ném cả 2 ra luồng mới (2 luồng mới khác nhau). 
+Cả hai câu lệnh `setTimeout` đều là `async func` nên chương trình sẽ ném cả 2 ra luồng mới (2 luồng mới khác nhau).
 
 Kết quả: sau 3s, 2 đoạn text trên đồng thời được `log` ra màn hình.
 
+Nếu muốn thực sự gọi 2 thằng `setTimeout` kia tuần tự: đợi 3s rồi `log` ra
+`"I have been waiting for you for 3 seconds"`, 3s tiếp theo để `log` `"And so does my friend"` (tổng cộng 6s, ta phải lồng `callback` vào nhau).
+
+```js
+//index.js
+
+// first timeout
+setTimeout(() => {
+  console.log("I have been waiting for you for 3 seconds");
+
+    
+  setTimeout(() => {
+    console.log("And so does my friend");
+  }, 3000);
+
+}, 3000);
+
+// second timeout
+```
 
 ## Các nguồn tham khảo:
+
 [W3 School Doc - JS Asynchronous](https://www.w3schools.com/js/js_asynchronous.asp)
 
-[Event-driven programming](https://quix.io/blog/what-why-how-of-event-driven-programming#:~:text=Event%2Ddriven%20programming%20(EDP),programs%2C%20sensor%20outputs%2C%20etc.)
-
+[Event-driven programming](<https://quix.io/blog/what-why-how-of-event-driven-programming#:~:text=Event%2Ddriven%20programming%20(EDP),programs%2C%20sensor%20outputs%2C%20etc.>)
 
 ---
 
 🧑‍💻🧑‍💻🧑‍💻 Happy coding !!! 🧑‍💻🧑‍💻🧑‍💻
 
-| [JS Callback](part1.md)  |  |
-| ------------- | ------------- |
+| [JS Callback](part1.md) |     |
+| ----------------------- | --- |

@@ -1,11 +1,9 @@
-const printSum = (a, b, callback) => {
-    const s = a + b;
-    console.log("Tổng là: " + s);
-    callback(s);
-  };
-  
-  // gọi hàm
-  const a = 2,
-    b = 3;
-  
-  printSum(a, b, (s) => console.log("Bình phương là: " + s*s));
+setTimeout(() => {
+  console.log("I have been waiting for you for 3 seconds");
+
+    
+  setTimeout(() => {
+    console.log("And so does my friend");
+  }, 3000);
+
+}, 3000);
