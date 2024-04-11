@@ -268,5 +268,5 @@ Kết quả in ra y hệt mà không cần `callback`
 
 🧑‍💻🧑‍💻🧑‍💻 Happy coding !!! 🧑‍💻🧑‍💻🧑‍💻
 
-|  | [Bài tiếp: JS Asynchronous](part2.md) |
+|  | [Tiếp: JS Asynchronous](part2.md) |
 | ------------- | ------------- |

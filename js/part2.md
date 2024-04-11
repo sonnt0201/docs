@@ -131,5 +131,5 @@ setTimeout(() => {
 
 🧑‍💻🧑‍💻🧑‍💻 Happy coding !!! 🧑‍💻🧑‍💻🧑‍💻
 
-| [JS Callback](part1.md) |     |
+| [Trước: JS Callback](part1.md) | [Tiếp: Async func với callback (tiếp)](part3.md)    |
 | ----------------------- | --- |
