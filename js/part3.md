@@ -80,5 +80,5 @@ Nên không thể cứ giữ cái cú pháp dùng `callback` như thế với m�
 
 🧑‍💻🧑‍💻🧑‍💻 Happy coding !!! 🧑‍💻🧑‍💻🧑‍💻
 
-| [Trước: JS Asynchronous](part2.md) |     |
+| [Trước: JS Asynchronous](part2.md) |  [Tiếp: JS Promise](part4.md)   |
 | ----------------------- | --- |
