@@ -159,7 +159,7 @@ firstPromise
 
 ```
 
-Mình có thể `then` nhiều lần, `catch` một hay nhiều lần, viết thẳng hàng như trên. Cơ chế giống `callback` như cú pháp nhìn tuần tự mà không bị lồng nhau, dùng để thay thế được cho `callback`.
+Mình có thể `then` nhiều lần, `catch` một hay nhiều lần, viết thẳng hàng như trên. Cơ chế giống `callback` nhưng cú pháp nhìn tuần tự mà không bị lồng nhau, dùng để thay thế được cho `callback`.
 
 Thông thường khi thực hành, ở những đoạn `throw` người ta sẽ ném ra một `Error object`, và ở phần `catch` người ta sẽ in ra hoặc xử lý `Error object` đấy. Do tất cả các `thow` của mình đều là 1 `Error object` nên mình có thể dùng 1 thằng `catch` duy nhất để `catch` tất cả các TH không hợp lệ.
 
