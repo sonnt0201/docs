@@ -62,6 +62,27 @@ waitThenCalculateSum(4, 10, 20)
 
 Màn hình log ra thông báo `Waiting for 4 seconds...` trước, rồi đợi 4s, sau đó in ra `Sum is: 30`.
 
+Tùy vào nhu cầu, mình có thể `return` hoặc không, hay `then` tiếp hoặc không.
+
+**Lưu ý**: Kể cả không `return` ở thằng `then` đầu thì mình vẫn có thể `then` tiếp được. Khi đó, phần tham số sẽ được  bỏ trống do tiến trình trước không trả về gì cả.
+
+```js
+// call the function.
+// đợi 4 giây rồi trả về tổng của 10 và 20
+waitThenCalculateSum(4, 10, 20)
+  .then((sum) => {
+    // biến `sum` để hứng giá trị `sum` từ tiến trình trước
+    console.log(sum); // in ra tổng đã tính.
+
+    // không return gì cả.
+  })
+  .then(() => {
+    // then tiếp nè.
+    console.log("Just another then!")
+  })
+  .catch((error) => console.log(error.message)); // catch any error if it has.
+```
+
 🧑‍💻🧑‍💻🧑‍💻 Happy coding !!! 🧑‍💻🧑‍💻🧑‍💻
 
 | [Trước: JS Promise](part4.md) |     |

@@ -120,11 +120,13 @@ firstPromise
   });
 ```
 
-Cái hàm trong then kia có thể `return` hoặc `throw`.
+Cái hàm trong then kia có thể `return`, `throw` hoặc không có `return` hay `throw`.
 
 - Nếu `return`, mình có thể tiếp tục `then` ở phía dưới, với tham số là giá trị được `return` ở phía trên.
 
 - Nếu `throw` một giá trị ở `then`, thằng `catch` sẽ là thằng hứng giá trị đó.
+
+- Nếu hàm không trả về gì, mình vẫn có thể cứ `then` tiếp, chỉ là phần tham số bỏ trống do không có giá trị gì trả về từ trước đó.
 
 ```js
 firstPromise
