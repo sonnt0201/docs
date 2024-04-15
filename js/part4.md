@@ -24,7 +24,7 @@ const foo = (resolve, reject) => {
 
 Hai tham số này đều là `callback`, hay nói cách khác, chúng cũng đều là các hàm.
 
-Ta chưa cần định nghĩa ngay 2 hàm `resolve` và `reject` này làm gì, cứ đưa tên 2 chúng nó vào hàm `foo` và trong quá trình code thân hàm `foo` chúng ta có thể thoải mái *gọi* nó:
+Ta chưa cần định nghĩa ngay 2 hàm `resolve` và `reject` này làm gì, cứ đưa tên 2 chúng nó vào hàm `foo` và trong quá trình code thân hàm `foo` chúng ta có thể thoải mái _gọi_ nó:
 
 Trong thân hàm `foo`, hãy sử dụng hàm `reject` và `resolve`:
 
@@ -90,10 +90,7 @@ const firstPromise = new Promise(sumIsMoreThanTen);
 `firstPromise` là 1 object có 2 phương thức `.then()` và `.catch()`. Nếu gọi hai thằng này ra thì code trông như thế này:
 
 ```js
-firstPromise
-    .then(callback1)
-    .catch(callback2)
-;
+firstPromise.then(callback1).catch(callback2);
 ```
 
 ### Viết `then`và `catch`
@@ -107,22 +104,20 @@ Hãy nhớ lại hàm `resolve` và `reject` ở trên, ta mới chỉ nếu tê
 `then` và `catch` để ta quyết định xem chương trình sẽ làm gì khi gọi `resolve` hay `reject`
 
 ```js
-firstPromise
-    .then(resolve)
-    .catch(reject)
+firstPromise.then(resolve).catch(reject);
 ```
 
 Ta viết trực tiếp phần code cho `resolve` và `reject` ngay trong `then` và `catch`, như thế này:
 
 ```js
 firstPromise
-    .then((sum) => {
-        // code when resolve
-        console.log("Ok, this sum is bigger than 10. Sum is " + sum);
-    })
-    .catch((sum) => {
-        console.log("Nah man!, this sum cannot even reach 10. Sum is " + sum)
-    })
+  .then((sum) => {
+    // code when resolve
+    console.log("Ok, this sum is bigger than 10. Sum is " + sum);
+  })
+  .catch((sum) => {
+    console.log("Nah man!, this sum cannot even reach 10. Sum is " + sum);
+  });
 ```
 
 Cái hàm trong then kia có thể `return` hoặc `throw`.
@@ -133,30 +128,29 @@ Cái hàm trong then kia có thể `return` hoặc `throw`.
 
 ```js
 firstPromise
-    .then((sum) => {
-        // code when resolve
-        console.log("Ok, this sum is bigger than 10. Sum is " + sum);
+  .then((sum) => {
+    // code when resolve
+    console.log("Ok, this sum is bigger than 10. Sum is " + sum);
 
-        // lấy bình phương của sum
-        const result = sum * sum;
+    // lấy bình phương của sum
+    const result = sum * sum;
 
-        // return để truyền result cho thằng then tiếp theo
-        return result;
-    })
-    .catch((sum) => {
-        console.log("Nah man!, this sum cannot even reach 10. Sum is " + sum)
-    })
-    .then(result => {
-        console.log("The square of this sum is " + result);
+    // return để truyền result cho thằng then tiếp theo
+    return result;
+  })
+  .catch((sum) => {
+    console.log("Nah man!, this sum cannot even reach 10. Sum is " + sum);
+  })
+  .then((result) => {
+    console.log("The square of this sum is " + result);
 
-        // Thằng then này dĩ nhiên có thể return hoặc throw như thằng trước
-        // Nhưng lần này mình thử throw xem sao
+    // Thằng then này dĩ nhiên có thể return hoặc throw như thằng trước
+    // Nhưng lần này mình thử throw xem sao
 
-        message = "Sorry, this ended !";
-        throw message;
-    })
-    .catch(message => console.log(message));
-
+    message = "Sorry, this ended !";
+    throw message;
+  })
+  .catch((message) => console.log(message));
 ```
 
 Mình có thể `then` nhiều lần, `catch` một hay nhiều lần, viết thẳng hàng như trên. Cơ chế giống `callback` nhưng cú pháp nhìn tuần tự mà không bị lồng nhau, dùng để thay thế được cho `callback`.
@@ -164,13 +158,14 @@ Mình có thể `then` nhiều lần, `catch` một hay nhiều lần, viết th
 Thông thường khi thực hành, ở những đoạn `throw` người ta sẽ ném ra một `Error object`, và ở phần `catch` người ta sẽ in ra hoặc xử lý `Error object` đấy. Do tất cả các `thow` của mình đều là 1 `Error object` nên mình có thể dùng 1 thằng `catch` duy nhất để `catch` tất cả các TH không hợp lệ.
 
 ### Tổng hợp
+
 Tổng hợp lại ta có đoạn code ở dưới.
 
 Thử thay đổi giá trị của `a` và `b` để tổng nó ra các kết quả khác nhau (lớn hoặc nhỏ hơn 10) để xem các hàm thực hiện như nào.
 
 Ngồi tự dò lại luồng của đống `Promise` này.
-```js
 
+```js
 const a = 10,
   b = 12;
 
@@ -181,35 +176,34 @@ const sumIsMoreThanTen = (resolve, reject) => {
   if (sum > 10) resolve(sum);
 
   // TH xấu, không thỏa mãn
-  if (sum <= 10) reject(
-    new Error("Nah man!, this sum cannot even reach 10. Sum is " + sum)
-  );
+  if (sum <= 10)
+    reject(new Error("Nah man!, this sum cannot even reach 10. Sum is " + sum));
 };
 
 const firstPromise = new Promise(sumIsMoreThanTen);
 
 firstPromise
-    .then((sum) => {
-        // code when resolve
-        console.log("Ok, this sum is bigger than 10. Sum is " + sum);
+  .then((sum) => {
+    // code when resolve
+    console.log("Ok, this sum is bigger than 10. Sum is " + sum);
 
-        // lấy bình phương của sum
-        const result = sum * sum;
+    // lấy bình phương của sum
+    const result = sum * sum;
 
-        // return để truyền result cho thằng then tiếp theo
-        return result;
-    })
-   
-    .then(result => {
-        console.log("The square of this sum is " + result);
+    // return để truyền result cho thằng then tiếp theo
+    return result;
+  })
 
-        // Thằng then này dĩ nhiên có thể return hoặc throw như thằng trước
-        // Nhưng lần này mình thử throw xem sao
+  .then((result) => {
+    console.log("The square of this sum is " + result);
 
-        message = "Sorry, this ended !";
-        throw new Error(message);
-    })
-    .catch(error => console.log(error.message)); // Một `catch` cho tất cả các error.
+    // Thằng then này dĩ nhiên có thể return hoặc throw như thằng trước
+    // Nhưng lần này mình thử throw xem sao
+
+    message = "Sorry, this ended !";
+    throw new Error(message);
+  })
+  .catch((error) => console.log(error.message)); // Một `catch` cho tất cả các error.
 ```
 
 ## Các nguồn tham khảo:
@@ -225,10 +219,10 @@ Về tài liệu chuẩn thì có 2 cái là [MDN](https://developer.mozilla.org
 - **W3** viết ngắn gọn và có ví dụ theo kiểu dễ hiểu hơn, hay được dùng làm tutorial.
 
 - Ngoài ra có thể đọc các blog về `Promise`
+
 ---
 
 🧑‍💻🧑‍💻🧑‍💻 Happy coding !!! 🧑‍💻🧑‍💻🧑‍💻
 
-| [Trước: JS Callback Hell](part3.md) |     |
-| ----------------------- | --- |
-
+| [Trước: JS Callback Hell](part3.md) | [Tiếp: JS Promise (tiếp)](part5.ms) |
+| ----------------------------------- | ----------------------------------- |
