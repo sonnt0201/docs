@@ -54,7 +54,7 @@ int decodePIRVols(
     [in] (uint8_t*) encodedData, // pointer to received packet
     [in] (uint8_t) len, // length of received packet
     [out] (uint8_t*) index,
-    [out] (uint8_t*) timestamp, // pointer to timestamp
+    [out] (int*) timestamp, // pointer to timestamp
     [out] (int*) pir_vol0, // poiter to store the value
     [out] (int*) pir_vol1,
     [out] (int*) pir_vol2,
