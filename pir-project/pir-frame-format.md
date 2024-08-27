@@ -15,13 +15,13 @@ The first packet goes with the begin timestamp of the cycle (has `0` as implicit
 
 ### Case 1: Packet with timestamp (16 bytes in total)
 
-|        | timestamp | PIR0's voltage | PIR1's voltage | PIR2's voltage | PIR3's voltage | PIR4's voltage | checksum |         |
+|        | timestamp | PIR0 voltage | PIR1 voltage | PIR2 voltage | PIR3 voltage | PIR4 voltage | checksum |         |
 | ------ | --------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------- | ------- |
 | byte-0 | 5 bytes   | 2 bytes        | 2 bytes        | 2 bytes        | 2 bytes        | 2 bytes        | 1 byte   | byte-15 |
 
 ### Case 2: Packet without timestamp (12 bytes in total)
 
-|        | packet index | PIR0's voltage | PIR1's voltage | PIR2's voltage | PIR3's voltage | PIR4's voltage | checksum |         |
+|        | packet index | PIR0 voltage | PIR1 voltage | PIR2 voltage | PIR3 voltage | PIR4 voltage | checksum |         |
 | ------ | ------------ | -------------- | -------------- | -------------- | -------------- | -------------- | -------- | ------- |
 | byte-0 | 1 byte       | 2 bytes        | 2 bytes        | 2 bytes        | 2 bytes        | 2 bytes        | 1 byte   | byte-11 |
 
