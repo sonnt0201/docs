@@ -34,13 +34,13 @@ We design 2 functions for encoding and decoding purposes in `C lang`.
 ```c
 // Return the length of encoded data. Return -1 if input is invalid
 int encodePIRVols(
-    [in] (uint_8) index, // index of packet in cycle (from 0 to 99)
-    [in] (int) timestamp, // timestamp in seconds
-    [in] (int) pir_vol0,
-    [in] (int) pir_vol1,
-    [in] (int) pir_vol2,
-    [in] (int) pir_vol3,
-    [in] (int) pir_vol4,
+    [in] (uint8_t) index, // index of packet in cycle (from 0 to 99)
+    [in] (uint32_t) timestamp, // timestamp in seconds
+    [in] (uint16_t) pir_vol0,
+    [in] (uint16_t) pir_vol1,
+    [in] (uint16_t) pir_vol2,
+    [in] (uint16_t) pir_vol3,
+    [in] (uint16_t) pir_vol4,
     [out] (uint8_t*) encodedData, // pointer to output encoded data
 )
 
@@ -54,12 +54,12 @@ int decodePIRVols(
     [in] (uint8_t*) encodedData, // pointer to received packet
     [in] (uint8_t) len, // length of received packet
     [out] (uint8_t*) index,
-    [out] (int*) timestamp, // pointer to timestamp
-    [out] (int*) pir_vol0, // poiter to store the value
-    [out] (int*) pir_vol1,
-    [out] (int*) pir_vol2,
-    [out] (int*) pir_vol3,
-    [out] (int*) pir_vol4,
+    [out] (uint32_t*) timestamp, // pointer to timestamp
+    [out] (uint16_t*) pir_vol0, // poiter to store the value
+    [out] (uint16_t*) pir_vol1,
+    [out] (uint16_t*) pir_vol2,
+    [out] (uint16_t*) pir_vol3,
+    [out] (uint16_t*) pir_vol4,
 )
 
 ```
