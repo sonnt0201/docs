@@ -2,24 +2,17 @@
 
 ## Abstraction
 
-To remove the noise caused by Socket opening when reading ADC values of PIR circuit. When decided to use 2 ESP32s:
+To remove the noise caused by Socket opening when reading ADC values of PIR circuit. We decided to use 2 ESP32s:
 
 - One for reading ADC, encoding the data and sending via UART.
 - The other as listener for UART packets, decode them and send to server using socket.
 
 ## PIR voltages' frame format
 
-In each cycle we send 100 packets UART with time interval of 10ms. Each packet includes voltages of 5 PIRs.
+In each cycle we send 100 packets UART with time interval of 10ms. Each packet includes voltages of 5 PIRs. Packet index goes from 0 to 99.
 
-The first packet goes with the begin timestamp of the cycle (has `0` as implicit index). The packets coming after go with their index (`1` -> `99`)
 
-### Case 1: Packet with timestamp (16 bytes in total)
-
-|        | timestamp | PIR0 voltage | PIR1 voltage | PIR2 voltage | PIR3 voltage | PIR4 voltage | checksum |         |
-| ------ | --------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------- | ------- |
-| byte-0 | 5 bytes   | 2 bytes        | 2 bytes        | 2 bytes        | 2 bytes        | 2 bytes        | 1 byte   | byte-15 |
-
-### Case 2: Packet without timestamp (12 bytes in total)
+**Size: 12 bytes in total**
 
 |        | packet index | PIR0 voltage | PIR1 voltage | PIR2 voltage | PIR3 voltage | PIR4 voltage | checksum |         |
 | ------ | ------------ | -------------- | -------------- | -------------- | -------------- | -------------- | -------- | ------- |
@@ -35,7 +28,6 @@ We design 2 functions for encoding and decoding purposes in `C lang`.
 // Return the length of encoded data. Return -1 if input is invalid
 int encodePIRVols(
     [in] (uint8_t) index, // index of packet in cycle (from 0 to 99)
-    [in] (uint32_t) timestamp, // timestamp in seconds
     [in] (uint16_t) pir_vol0,
     [in] (uint16_t) pir_vol1,
     [in] (uint16_t) pir_vol2,
@@ -54,8 +46,7 @@ int decodePIRVols(
     [in] (uint8_t*) encodedData, // pointer to received packet
     [in] (uint8_t) len, // length of received packet
     [out] (uint8_t*) index,
-    [out] (uint32_t*) timestamp, // pointer to timestamp
-    [out] (uint16_t*) pir_vol0, // poiter to store the value
+    [out] (uint16_t*) pir_vol0, // poiter to store the decoded value
     [out] (uint16_t*) pir_vol1,
     [out] (uint16_t*) pir_vol2,
     [out] (uint16_t*) pir_vol3,
@@ -66,10 +57,10 @@ int decodePIRVols(
 
 ## Encoded PIR's voltage value
 
-PIR's voltage value (also the ADC value) include 4 digits in decimal. We decode it to 2 bytes, the first byte storing 2 former digits, the second byte storing 2 latter digits
+We use 2 bytes to store each voltage value. 
 
-Eg: Voltage = 1234
+Eg: Voltage = 1234 => 0x2322
 
 | Byte index | byte 0 | byte 1 |
 | - | - | - |
-| Demical value | 12 | 34 |
+| Demical value | 0x23 | 0x22 |
