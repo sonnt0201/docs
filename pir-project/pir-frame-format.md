@@ -18,7 +18,7 @@ In each cycle we send 100 packets UART with time interval of 10ms. Each packet i
 | ------ | ------------ | -------------- | -------------- | -------------- | -------------- | -------------- | -------- | ------- |
 | byte-0 | 1 byte       | 2 bytes        | 2 bytes        | 2 bytes        | 2 bytes        | 2 bytes        | 1 byte   | byte-11 |
 
-## Encoder and decoder
+## Encoder and decoder for a frame
 
 We design 2 functions for encoding and decoding purposes in `C lang`.
 
@@ -64,3 +64,4 @@ Eg: Voltage = 1234 => 0x2322
 | Byte index | byte 0 | byte 1 |
 | - | - | - |
 | Demical value | 0x23 | 0x22 |
+

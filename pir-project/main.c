@@ -1,3 +1,7 @@
+/*
+    8/2024 by Thai-Son Nguyen
+    Encoder and decoder for PIR Array project.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #define SUCCESS 0
