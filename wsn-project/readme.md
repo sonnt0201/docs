@@ -15,9 +15,9 @@ Do ae cũng đều làm lab các dự án liên quan tới nhúng rồi nên tô
 
 ## Mô hình hệ thống
 
-- Mạng cảm biến hình sao, 1 máy tính đặt ở trung tâm, các cảm biến - vi điều khiển là các node kết nối và truyền trực tiếp dữ liệu tới máy tính đấy.
+- Mạng cảm biến **hình sao**, 1 máy tính đặt ở trung tâm, các cảm biến - vi điều khiển là các node kết nối và truyền trực tiếp dữ liệu tới máy tính đấy.
 
-- Máy tính đảm nhiệm cả làm gateway lẫn server - database - giao diện.
+- Máy tính đảm nhiệm cả làm **gateway** lẫn server - database - giao diện.
 
 - Các node cảm biến truyền trực tiếp dữ liệu tới máy theo chu kì yêu cầu.
 
@@ -25,39 +25,39 @@ Do ae cũng đều làm lab các dự án liên quan tới nhúng rồi nên tô
 
 ### Giao thức
 
-- Các node đóng gói và gửi dữ liệu tới gateway thông qua lora.
+- Các node đóng gói và gửi dữ liệu tới **gateway** thông qua `lora`.
 
-- Gateway giải mã lora và đóng gói thành HTTP message, gửi tới server.
+- Gateway giải mã `lora` và đóng gói thành `TCP` message, gửi tới **server**.
 
-- Server là HTTP server, nhận gói tin, phân tích nếu cần, lưu trữ vào database và hiển thị lên giao diện.
+- **Server** là `TCP & HTTP server`, nhận gói tin, phân tích nếu cần, lưu trữ vào **database** và hiển thị lên giao diện.
 
 ### Phần cứng và firmware
 
 - Module nhiệt độ và độ ẩm: Tâm chọn, tôi chưa biết :3
 
-- Module Lora: Tâm chọn nốt :3
+- Module `Lora`: Tâm chọn nốt :3
 
-- Vi điều khiển: STM32 
+- Vi điều khiển: `STM32` 
 
 ### Gateway và server
 
-Liệt kê cho ae biết thôi chứ tôi sẽ ôm hết phần này, ae không cần tìm hiểu làm gì.
+Về **server** và **giao diện**, liệt kê cho ae biết thôi chứ tôi sẽ ôm hết phần này, ae không cần tìm hiểu làm gì.
 
-- Server và giao diện đều đặt trên 1 PC.
+- **Server** và **giao diện** đều đặt trên 1 máy tính.
 
-- Môi trường NodeJS
+- Môi trường `NodeJS`
 
-- Database: Sqlite
+- Database: `Sqlite`
 
 Các công nghệ này đều đảm bảo nhu cầu mình làm về hệ thống nhúng (tải, tốc độ xử lí, chức năng, v.v..).
 
-Về gateway tôi đang cân nhắc, tôi sẽ viết chi tiết phía dưới.
+Về **gateway** tôi đang cân nhắc, tôi sẽ viết chi tiết phía dưới.
 
 
 ## Phân chia công việc (tạm thời)
 
 - **Tâm:** mạch cứng, cảm biến.
-- **Đức:** code cho STM32, đọc data từ sensor, tạo và gửi lora.
+- **Đức:** code cho `STM32`, đọc data từ sensor, tạo và gửi `lora`.
 - **Sơn:** code cho gateway, server và giao diện.
 
 ## Tiến độ
@@ -100,15 +100,15 @@ Nhược:
 
 **Về việc để gateway riêng:**
 
-- Phạm vi truyền từ sensor node tới gateway nhỏ hơn do mình thường đặt gateway tại vị trí ở giữa sensor và pc server. Do đó, nếu như mình có thể **tự ý điều chỉnh được công suất phát** của con lora, mình có thể tiết kiệm được năng lượng.
+- Phạm vi truyền từ **sensor node** tới **gateway** nhỏ hơn do mình thường đặt gateway tại vị trí ở giữa **sensor** và **pc server**. Do đó, nếu như mình có thể **tự ý điều chỉnh được công suất phát** của con `lora`, mình có thể tiết kiệm được năng lượng.
 
-- Truyền được xa hơn khi có nhu cầu. Khi mình cần đặt sensor giữa cánh đồng chẳng hạn. Thì khoảng cách truyền từ sensor tới server = khoảng cách truyền từ sensor tới gateway (lora) + gateway tới máy tính/server (wifi - internet). => Xa hơn so với việc chỉ truyền từ sensor tới thẳng máy tính.
+- Truyền được xa hơn khi có nhu cầu. Khi mình cần đặt **sensor** giữa cánh đồng chẳng hạn. Thì khoảng cách truyền từ **sensor** tới **server** = khoảng cách truyền từ **sensor** tới **gateway** (`lora`) + **gateway** tới máy tính/**server** (`wifi - internet`). => Xa hơn so với việc chỉ truyền từ **sensor** tới thẳng máy tính.
 
-- (Tôi đoán) Các module điện tử như lora cũng thường hỗ trợ để giao tiếp với vi điều khiển nhiều hơn là máy tính PC.
+- (Tôi đoán) Các module điện tử như `lora` cũng thường hỗ trợ để giao tiếp với vi điều khiển nhiều hơn là máy tính PC.
 
 Nhược:
 
-- Thêm 1 vi điều khiển, nếu ae dùng esp thì mình cắm thêm 1 module lora vào esp32 trong khi nó có sẵn ble rồi => tốn kém hơn về chi phí và năng lượng.
+- Thêm 1 vi điều khiển, nếu ae dùng **esp** thì mình cắm thêm 1 module `lora` vào **esp32** trong khi nó có sẵn `ble`, `wifi` rồi => tốn kém hơn về chi phí và năng lượng.
 
 - Code bằng `C`, tốn thời gian hơn và khó bảo trì, nâng cấp hơn.
 
