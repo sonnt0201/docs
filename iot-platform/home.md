@@ -18,4 +18,4 @@ After reaching this basic aim, we'll go for futher goals in next semester (such 
 
 ## Architecture
 
-![architecture](/overview-f0.png "Architecture overview")
+![console](/overview-f0.png "Architecture overview")
