@@ -18,25 +18,4 @@ After reaching this basic aim, we'll go for futher goals in next semester (such 
 
 ## Architecture
 
-```mermaid
-
-flowchart LR
-    %% node def
-    sensor-nodes-0[External Sensor Devices]
-    sensor-nodes-1[External Sensor Devices]
-    gateway-mcu[MCU Gateway]
-    gateway-onpc[On-PC Gateway]
-    server[HTTP Server]
-    dbi[Postgres Database ORM]
-
-    %% connections
-    sensor-nodes-0 -- "BLE | Lora" --> gateway-mcu 
-    sensor-nodes-1 -- "TCP | HTTP | MQTT" --> gateway-onpc
-    gateway-mcu --HTTP--> server
-    gateway-onpc --HTTP--> server
-    server --> dbi
-    
-
-
-
-```
+![architecture](/overview-f1.svg "Architecture overview")
