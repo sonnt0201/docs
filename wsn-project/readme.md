@@ -33,7 +33,7 @@ Do ae cũng đều làm lab các dự án liên quan tới nhúng rồi nên tô
 
 ### Phần cứng và firmware
 
-- Module nhiệt độ và độ ẩm: Tâm chọn, tôi chưa biết :3
+- Module nhiệt độ và độ ẩm: `DHT`, ??? :3
 
 - Module `Lora`: Tâm chọn nốt :3
 
