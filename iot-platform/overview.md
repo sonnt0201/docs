@@ -2,7 +2,7 @@
 
 ## Abstraction
 
-Our first aim is to providing a maintainable and scalable IoT platform accepting, holding and managing multi-type of sensor data. The primary features of this system include: 
+Our first aim is to providing a maintainable and scalable IoT platform receiving, holding and managing a variety of sensor data. The primary features of this system include: 
 
 - **Multi-protocol support:** Accepting and handling multi-type of wireless protocols: TCP, HTTP, MQTT, BLE, Lora, etc.
 
@@ -20,11 +20,11 @@ After reaching this basic aim, we'll go for futher goals in next semester (such 
 
 ![console](overview-f0.png)
 
-(Arrows indicate how sensor data moving and being stored around the system.)
+(Arrows indicate how sensor data moving and being stored around the system).
 
 ### Gateway
 
-Gateways receive data from external device
+Gateways receive data from external sensor devices
 
 The whole platform include 2 types of gateway so that various wireless protocols can be supported:
 
@@ -39,7 +39,7 @@ Gateways decode the data and forward them to master server via HTTP.
 Master server as HTTP server provides GraphQL APIs to perform robust CRUD operations, 
 easily handle data of any sensor types. Core features include:
 
-- Standardized APIs to: 
+- **Standardized APIs** to: 
 	
 	-> Create devices of any sensor type with device's name, owner, description, units of measurement, sampling rate, etc.
 	
@@ -49,23 +49,24 @@ easily handle data of any sensor types. Core features include:
 
 	-> Support realtime update using websocket.
 
-- Authentication and authorization: users with basic privileges can define their own sensor devices and push sensor data of those devices. Basic user can only see what they have created. Users with admin 
-privileges, on the other hand, can see and change all the things. User passwords are saved as SHA256 codes.
+- **Authentication and authorization**: users with` basic privileges` can define their own sensor devices and push sensor data of those devices. 
+Basic users can only see what they themselves have created. Users with `admin privileges`, on the other hand, 
+can see and change all the things. User passwords are saved as SHA256 codes.
 
 
 ### User Interface
 
-Web-based Graphical User Interface for easily creating sensor devices and seeing all the data recorded. (Maybe) Support 
-data analyzing and visualizing.
+Browser-based Graphical User Interface is for easily creating sensor devices and managing all the data recorded. 
+(Maybe) Support data analyzing and visualizing.
 
 ******
 
 
-| What's next ? - [Database schema](part1.md) |
+| What's next ? - [Database schema](database-schema.md) |
 | ------------- |
 
-***
-10/2024 by Thai-Son Nguyen
+
+October 2024 by Thai-Son Nguyen.
 
 🧑‍💻🧑‍💻🧑‍💻 Happy coding !!! 🧑‍💻🧑‍💻🧑‍💻
 
