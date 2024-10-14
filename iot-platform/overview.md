@@ -20,7 +20,7 @@ After reaching this basic aim, we'll go for futher goals in next semester (such 
 
 ![console](overview-f0.png)
 
-(Arrows indicate how sensor data moving and being stored around the system).
+(Arrows indicate how sensor data is moving and being stored around the system).
 
 ### Gateway
 
@@ -28,9 +28,9 @@ Gateways receive data from external sensor devices
 
 The whole platform includes 2 types of gateway so that various wireless protocols can be supported:
 
-- Gateways as On-PC gateway to support Internet-based Protocols (TCP, HTTP, MQTT, etc.).
+- Gateways as On-PC gateways to support Internet-based Protocols (TCP, HTTP, MQTT, etc.).
 
-- Gateways as MCU gateway to support other atenna-based protocols (Classic Bluetooth, BLE, Lora, etc.)
+- Gateways as MCU gateways to support other antenna-based protocols (Classic Bluetooth, BLE, Lora, etc.)
 
 Gateways decode the data and forward them to master server via HTTP.
 
@@ -49,7 +49,7 @@ easily handle data of any sensor types. Core features include:
 
 	-> Support realtime update using websocket.
 
-- **Authentication and authorization**: users with` basic privileges` can define their own sensor devices and push sensor data of those devices. 
+- **Authentication and authorization**: users with `basic privileges` can define their own sensor devices and push sensor data of those devices. 
 Basic users can only see what they themselves have created. Users with `admin privileges`, on the other hand, 
 can see and change all the things. User passwords are saved as SHA256 codes.
 
