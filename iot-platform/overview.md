@@ -26,7 +26,7 @@ After reaching this basic aim, we'll go for futher goals in next semester (such 
 
 Gateways receive data from external sensor devices
 
-The whole platform include 2 types of gateway so that various wireless protocols can be supported:
+The whole platform includes 2 types of gateway so that various wireless protocols can be supported:
 
 - Gateways as On-PC gateway to support Internet-based Protocols (TCP, HTTP, MQTT, etc.).
 
@@ -53,6 +53,9 @@ easily handle data of any sensor types. Core features include:
 Basic users can only see what they themselves have created. Users with `admin privileges`, on the other hand, 
 can see and change all the things. User passwords are saved as SHA256 codes.
 
+- **Guest**: Guests are unknown, not registered users. For easy approaching 
+this system, in beta version, we still allow guests to create their devices and 
+push their data, but guests' devices and data can be see by any user.
 
 ### User Interface
 
