@@ -31,7 +31,7 @@ If you want to encode data to packet frame by yourself, here is the packet frame
 format:
 
 | | 16 bytes | 8 bytes | 2 * n bytes | |
-|*| 
+| - | - | - | - | - |
 |start frame| Device's ID | Timestamp (in millisec) | Array of values (2 byte for each value) | end frame
 
 If present packet frame in `C struct`, the struct will looks like this:
