@@ -8,9 +8,10 @@ Our first aim is to providing a maintainable and scalable IoT platform receiving
 
 - **Data storage and management:** Storing and providing CRUD (Create | Read | Update | Delete) operations for multi-type of sensor data. 
 
-- **Extensibility:** Giving methods for adding and supporting new types of sensor data, ensuring the platform remains adaptable to future needs.
+- **Standardized APIs:** Giving standard rules and APIs so other external projects (such as lab projects)
+ can easily store their sensor data records.
 
-- **Standardized APIs:** Giving standard rules and APIs for integrating other projects (such as lab projects), allowing them to easily send data to the platform.
+- **Extensibility:** Giving methods for adding and supporting new types of sensor data, ensuring the platform remains adaptable to future needs.
 
 - **User-friendly interface:** Giving a friendly user-interface to manage all the things.
 

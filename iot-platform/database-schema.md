@@ -16,28 +16,28 @@ title: Diagram presenting relations (explanation below)
 erDiagram
    %% define entities
    USER {
-		user_id string PK
-		username string 
-		name string
-		password string(SHA256)
-		privilege unint8_t
-		description string
+        user_id string PK
+        username string 
+        name string
+        password string(SHA256)
+        privilege unint8_t
+        description string
    }
 
    DEVICE {
-		device_id string PK
-		name string
-		description string
-		user_id string FK
-		measurement_unit string
-		sample_rate(Hz) int  
+        device_id string PK
+        name string
+        description string
+        user_id string FK
+        measurement_unit string
+        sample_rate(Hz) int  
    }
 
    SENSOR_DATA {
-		data_id string PK
-		values int[]
-		timestamp int
-		device_id string FK
+        data_id string PK
+        values int[]
+        timestamp int
+        device_id string FK
    }
 
    %% relations
@@ -72,7 +72,7 @@ in each request/frame, the values field in sensor_data table can be an array,
 and attached timestamp is the reading timestamp of the *first* value in that array. 
 
 - **Timestamp**: Timestamp of the data record. If record's sensor values are 
-- stored as an array. Timestamp is the sampling time of the first value in that
+stored as an array. Timestamp is the sampling time of the first value in that
 array.
 
 - **Device ID**: Present the origin device of that data, is a foreign key,
@@ -80,7 +80,7 @@ refer to `device_id` field of `device` table.
 
 ### User reads sensor data
 
-Of course, user can read their data by using our GUI, or calling open APIs.
+Of course, users can read their data by using our GUI, or calling open APIs.
 
 - `Admins (or admin users)` can read everything.
 
@@ -99,28 +99,28 @@ title: IoT Flatform database (with foreign key map)
 erDiagram 
    %% define entities
    users {
-		user_id string PK
-		username string 
-		name string
-		password string(SHA256)
-		privilege unint8_t
-		description string
+        user_id string PK
+        username string 
+        name string
+        password string(SHA256)
+        privilege unint8_t
+        description string
    }
 
    devices {
-		device_id string PK
-		name string
-		description string
-		user_id string FK
-		measurement_unit string
-		sample_rate(Hz) int  
+        device_id string PK
+        name string
+        description string
+        user_id string FK
+        measurement_unit string
+        sample_rate(Hz) int  
    }
 
    sensor_data {
-		data_id string PK
-		values int[]
-		timestamp int
-		device_id string FK
+        data_id string PK
+        values int[]
+        timestamp int
+        device_id string FK
    }
 
    %% foreign key map
