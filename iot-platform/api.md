@@ -30,26 +30,31 @@ packet, then send that packet to gateway.
 If you want to encode data to packet frame by yourself, here is the packet frame
 format:
 
-| | 16 bytes | 8 bytes | 2 * n bytes | |
-| - | - | - | - | - |
-|start frame| Device's ID | Timestamp (in millisec) | Array of values (2 byte for each value) | end frame
+| | 1 byte | 16 bytes | 8 bytes | 2 * n bytes | 1 byte | |
+| - | - | - | - | - | - | -|
+|start frame | packet's length | Device's ID | Timestamp (in millisec) | Array of values (2 byte for each value) | checksum | end frame
 
 If present packet frame in `C struct`, the struct will looks like this:
 
 ```c
 struct SensorDataFrame {
+	uint8_t packet_len
 	uint8_t device_id[16]
 	uint64_t timestamp
 	int16_t values[NUMBER_OF_VAL]
+	int8_t
 }
 ```
+
+Packet length is the total length of the packet frame including the 
+length byte itself and checksum
 
 With `NUMBER_OF_VAL` is defined as the number of values you want to send in a frame.
 
 The system accepts packet frame with 1 sensor value at least,
 and 100 sensor values at most.
 
-This means the size of a packet can be from 26 bytes to 224 bytes.
+This means the size of a packet, as well as the value of packet's length, can be from 28 bytes to 226 bytes.
 
 ## Fetch data from server with GraphQL API.
 
