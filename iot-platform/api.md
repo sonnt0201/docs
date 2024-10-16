@@ -21,7 +21,7 @@ Just use our GUI, available when the platform is published.
 ## Sensor data - Packet frame format
 
 These data frames will be created by your external devices/MCUs, then sent
-using supported wireless protocol to our gateway.
+using a supported wireless protocol to our gateway.
 
 Actually, we'll develop our own *encoder library* to encode data into packet frame,
 you can just call the function to encode, get the pointer to the returned data
@@ -42,7 +42,7 @@ struct SensorDataFrame {
 	uint8_t device_id[16]
 	uint64_t timestamp
 	int16_t values[NUMBER_OF_VAL]
-	int8_t
+	int8_t checksum
 }
 ```
 
