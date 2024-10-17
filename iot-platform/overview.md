@@ -56,7 +56,7 @@ can see and change all the things. User passwords are saved as SHA256 codes.
 
 - **Guest**: Guests are unknown, not registered users. For easy approaching 
 this system, in beta version, we still allow guests to create their devices and 
-push their data, but guests' devices and data can be see by any user.
+push their data, but guests' devices and data can be seen by any user.
 
 ### User Interface
 
