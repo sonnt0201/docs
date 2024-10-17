@@ -63,8 +63,8 @@ can see those devices' info and data.
 ### Device samples sensor data
 
 In real life, users' physical devices will send the sensor data to the gateways. The gateways
-forward data to master server. Then, the server saves them in as sensor_data 
-instance in database.
+forward data to master server. Then, the server saves them as sensor_data 
+instances in database.
 
 The data fields include:
 - **Values**: the main values of the sensor device to be recorded. In case the 
