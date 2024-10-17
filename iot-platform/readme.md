@@ -9,7 +9,7 @@ further implementations of this platform.
 The contents include:
 
 -  [Overview: ](overview.md) shows the main purposes of this project, architecture and model of the system and basic components in it.
--  [Database Schema: ](database-schema.md) shows how data are organized in the database, entities in it and relations among them.
+-  [Database Schema: ](database-schema.md) shows how data are organized in the database, entities and relations among them.
 -  [APIs Tutorial](api.md) basic instructions for creating and reading sensor data.
 
 Documents is still on updating. 

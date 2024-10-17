@@ -46,15 +46,16 @@ struct SensorDataFrame {
 }
 ```
 
-Packet length is the total length of the packet frame including the 
-length byte itself and checksum.
-
 With `NUMBER_OF_VAL` is defined as the number of values you want to send in a frame.
 
-The system accepts packet frame with 1 sensor value at least,
+`Packet length`: is the total length of the packet frame including the 
+length byte itself and checksum.
+
+
+`Array of values`: The system accepts packet frame with 1 sensor value at least,
 and 100 sensor values at most.
 
-This means the size of a packet (in bytes), as well as the value of packet's length, can be from 28 to 226.
+This means the size of a packet (in bytes), as well as the value of `packet's length`, can be from 28 to 226.
 
 ## Fetch data from server with GraphQL API.
 
