@@ -72,7 +72,7 @@ sensor values can be read in high rate and devices want to send multiple values
 in each request/frame, the values field in sensor_data table can be an array.
 
 - **Timestamp**: Timestamp of the data record. If record's sensor values are 
-stored as an array. Timestamp is the sampling time of the first value in that
+stored as an array, timestamp is the sampling time of the first value in that
 array.
 
 - **Device ID**: The origin device of that data, a foreign key,
