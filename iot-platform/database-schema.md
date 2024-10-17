@@ -31,6 +31,7 @@ erDiagram
         user_id string FK
         measurement_unit string
         sample_rate(Hz) int  
+        enable boolean
    }
 
    SENSOR_DATA {
@@ -113,7 +114,8 @@ erDiagram
         description string
         user_id string FK
         measurement_unit string
-        sample_rate(Hz) int  
+        sample_rate(Hz) int 
+        enable boolean
    }
 
    sensor_data {
