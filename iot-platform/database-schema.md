@@ -3,7 +3,7 @@
 ## Abstraction
 
 This page shows how data are organized in database, 
-including entities, relations between them and tables in the database.
+including entities, relations among them and tables in the database.
 
 ## Entitites and Relations
 
@@ -55,9 +55,9 @@ or MCUs or anything that samples theirs data), edit the devices'
 description, measurement unit and sample rate for easy further 
 calculations and data displaying.
 
-`user_id`, as a device's field, is the id of the user who creates that device, also called `owner`.
+`user_id`, as a device's field, is the id of the user who creates that device (also called `owner`).
 
-If devices are created by guests, the owner/user_id will be set as `NULL` and everyone 
+If devices are created by `guests`, the owner/user_id will be set as `NULL` and everyone 
 can see those devices' info and data.
 
 ### Device samples sensor data
@@ -69,19 +69,18 @@ instance in database.
 The data fields include:
 - **Values**: the main values of the sensor device to be recorded. In case the 
 sensor values can be read in high rate and devices want to send multiple values
-in each request/frame, the values field in sensor_data table can be an array,
-and attached timestamp is the reading timestamp of the *first* value in that array. 
+in each request/frame, the values field in sensor_data table can be an array.
 
 - **Timestamp**: Timestamp of the data record. If record's sensor values are 
 stored as an array. Timestamp is the sampling time of the first value in that
 array.
 
-- **Device ID**: Present the origin device of that data, is a foreign key,
-refer to `device_id` field of `device` table.
+- **Device ID**: The origin device of that data, a foreign key,
+refers to `device_id` field of `device` table.
 
 ### User reads sensor data
 
-Of course, users can read their data by using our GUI, or calling open APIs.
+Users can read their data by using our GUI, or calling open APIs.
 
 - `Admins (or admin users)` can read everything.
 
