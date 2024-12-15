@@ -40,11 +40,11 @@ Về sau khi các nhóm đã đẩy được dữ liệu lên ổn định. Sẽ
 {
     "label": "I",
     "timestamp": 1733108907577,
-    "values": [230, 220, 221, 190, ...]
+    "values": [10, 8, 6, 2, ...]
 }
 ```
 
-Khi đó `1733108907577` sẽ là thời gian đọc giá trị đầu tiên (`I = 230`). 
+Khi đó `1733108907577` sẽ là thời gian đọc giá trị đầu tiên (`I = 10`). 
 
 Trong device của Thingsboard cũng có 1 `shared attribute` tên là `sampleTime`. `sampleTime` là chu kì lấy mẫu thiết bị, được cố định để về sau phục vụ việc tách các giá trị trong `values array`, tính toán timestamp của từng giá trị trong array dựa trên `timestamp` của giá trị đầu cũng như `sample time` của thiết bị.
 
