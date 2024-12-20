@@ -24,29 +24,56 @@ Về sau khi các nhóm đã đẩy được dữ liệu lên ổn định. Sẽ
 
 ```ts
 {
-   "label": string, 
-    "timestamp": number, // timestamp in millisec
-    "values": number[] // Array of number
+   "ts": number,
+    "values": {
+        "key1": number | number[],
+        "key2": number | number[],
+        ...
+    }
 }
 ```
+`ts` là timestamp theo millisecond.
 
-`label` là tên nhãn - loại giá trị (**VD**: `U`, `I`, `P`, ...)
+`values` là các giá trị theo thời gian thực được gửi lên.
+Gồm các nhãn `key1`, `key2`, ... là tên các loại giá trị (ví dụ: "I", "U", "P", "wearform", ...) 
 
-`values` là dãy các giá trị cần gửi lên với `timestamp` là thời gian đọc của giá trị đầu tiên trong dãy.
+Giá trị của các khóa (`key`) có thể là một số (`number`) hoặc một mảng các số (`number[]`, ví dụ:  `[10, 8, 7, 5, 4, 2, -2, -4]`). Quy ước:
 
-**VD:** Gửi I
+- Nếu giá trị là một số thì timestamp (`ts`) gửi kèm là thời điểm trích mẫu của giá trị đó.
 
+- Nếu giá trị là một mảng thì timestamp gửi kèm là thời điểm trích mẫu của **giá trị đầu tiên** trong mảng đó.
+
+
+
+**VD:** Gửi 1 loại giá trị (I), dạng mảng
 ```JSON
+
 {
-    "label": "I",
-    "timestamp": 1733108907577,
-    "values": [230, 220, 221, 190, ...]
+   "ts": 1733108907577,
+    "values": {
+        "I": [10, 8, 7, 5, 4, 2, -2, -4]
+    }
+}
+
+Khi đó `ts` là thời gian trích mẫu (timestamp theo millisec) của giá trị đầu tiên (`I = 10`)
+
+```
+**VD:** Gửi nhiều loại giá trị
+ 
+```JSON
+
+{
+   "ts": 1733108907577,
+    "values": {
+        "I": [10, 8, 7, 5, 4, 2, -2, -4],
+        "P": 100,
+        "Q" : 10
+    }
 }
 ```
 
-Khi đó `1733108907577` sẽ là thời gian đọc giá trị đầu tiên (`I = 230`). 
-
-Trong device của Thingsboard cũng có 1 `shared attribute` tên là `sampleTime`. `sampleTime` là chu kì lấy mẫu thiết bị, được cố định để về sau phục vụ việc tách các giá trị trong `values array`, tính toán timestamp của từng giá trị trong array dựa trên `timestamp` của giá trị đầu cũng như `sample time` của thiết bị.
+**Lưu ý:** Trong device của Thingsboard cũng có 1 `shared attribute` tên là `sampleTime`. 
+`sampleTime` là chu kì lấy mẫu thiết bị, được cố định để về sau phục vụ việc tách các giá trị trong `values array`, tính toán timestamp của từng giá trị trong array dựa trên `timestamp` của giá trị đầu cũng như `sample time` của thiết bị.
 
 ***
 
