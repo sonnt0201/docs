@@ -19,7 +19,7 @@ Tôi dùng nó để viết Backend và giao diện cho bộ lập lịch.
 Typescript (TS/ts) vốn được xây dựng dựa trên JavaScript. Cú pháp cũng dựa trên JavaScript nhưng được "nâng cấp hơn".
 
 ```ts
-console.log("Hello world!"); // "hello world" in typescript
+console.log("Hello world!"); // "hello world" in typescript (same as in javascript)
 ```
 
 Bình thường sau khi code bằng ts, trình biên dịch cũng sẽ biên dịch ts thành JavaScript. Sau đó NodeJS hoặc Browser (Google chrome các kiểu) sẽ chạy đống Javascript đó như bình thường.
