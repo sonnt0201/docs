@@ -2,12 +2,12 @@
 
 ## Processor (bộ xử lý)
 
-Máy tính (để bàn, laptop,...) mà em đang dùng ấy, nó có con CPU là bộ xử lý trung tâm, chịu trách nhiệm 
+Máy tính (để bàn, laptop,...) mà em đang dùng ấy, nó có con CPU là bộ xử lý (processor) trung tâm, chịu trách nhiệm 
 thực hiện các lệnh tính toán, đọc ghi bộ nhớ, kết nối và điều khiển các phần khác, v.v..
 
 Nó như là đầu não của máy tính luôn.
 
-CPU (Central Processing Unit) là một bộ xử lý (processor).
+
 
 ## Bus
 
@@ -44,10 +44,10 @@ nhà khác (dân cư, đơn vị, ...), cũng thông qua tuyến bus này.
 ### Thế xe buýt chở được bao nhiêu "người"
 
 Ngày xưa ban đầu xe buýt còn yếu, công nghệ thấp thì chỉ được 8 "người" (**8-bit data bus**).
-Sau công nghệ phát triển lên thì chở được được hẳn 16 "người": 16-bit data bus. Xịn nữa thì 
-32-bit data bus.
+Sau công nghệ phát triển lên thì chở được được hẳn 16 "người": **16-bit data bus**. Xịn nữa thì 
+**32-bit data bus**.
 
-Hiện đại thì là 64-bit data bus.
+Hiện đại thì là **64-bit data bus**.
 
 ### Địa chỉ (Memory Addressing)
 
@@ -78,8 +78,7 @@ Lệnh là các chỉ dẫn, những phép toán cơ bản nhất mà con proces
 
 ...
 
-Ví dụ một câu lệnh trong code `C/C++` hay `Java` mà em dùng ấy, sẽ được biên dịch thành mã máy gồm nhiều lệnh
-(instruction) mà con processor thực hiện được.
+Ví dụ một câu lệnh trong code `C/C++` hay `Java` mà em dùng ấy, sẽ được biên dịch thành mã máy gồm nhiều lệnh (instruction) mà con processor thực hiện được.
 
 ví dụ về 1 instruction (bằng ngôn ngữ assembly - hợp ngữ)
 
@@ -114,7 +113,7 @@ ADD A, #0x24
 ```
 
 Processor cần thanh ghi để lưu mã của lệnh `ADD`, 2 giá trị đầu vào và giá trị đầu ra, 
-thì nó dùng các thanh ghi nội để lưu những giá trị như thế.
+ nó dùng các thanh ghi nội để lưu những giá trị như thế.
 
 ### Số bit của thanh ghi
 
@@ -188,7 +187,7 @@ cũ, cái này có thể tự đọc thêm trong giáo trình.
 
 - [Kiến trúc của 8086](https://www.geeksforgeeks.org/architecture-of-8086/) (Blog)
 
-- (Hơi khó đọc) [AMD64 Manual](https://www.amd.com/content/dam/amd/en/documents/processor-tech-docs/programmer-references/40332.pdf): Tài liệu chuẩn của hãng
+- [AMD64 Manual](https://www.amd.com/content/dam/amd/en/documents/processor-tech-docs/programmer-references/40332.pdf): Tài liệu chuẩn của hãng
 
 ***
 
