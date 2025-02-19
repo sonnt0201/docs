@@ -145,7 +145,7 @@ máy tính hiện đại của mình) "nhanh hơn, mạnh hơn" là vì có ki�
 
 ### x86-32
 
-Tức là thuộc dòng x86 có kiến trúc 32-bit:
+Tức là các thiết bị thuộc dòng x86 có kiến trúc 32-bit:
 
 - **Registers**: 32-bit (e.g., EAX, EBX, ECX, etc.).
 - **Memory Addressing**: Đánh số địa chỉ lên đến 4 GB (2³² bytes).
