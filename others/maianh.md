@@ -178,6 +178,65 @@ Lợi ích chính của các dòng bit cao hơn:
 này là do khả năng tương thích ngược của dòng x86 mới có thể giúp nó chạy các app thuộc dòng
 cũ, cái này có thể tự đọc thêm trong giáo trình.
 
+## Ứng dụng của dòng x86-64
+
+Nhìn chung, máy tính hiện đại hiện tại sử dụng kiến trúc x86-64. 
+Các hệ điều hành chạy trên x86-64 thường gặp bao gồm: Window 10/11, Linux x86_64, ...
+Đây đều là những thiết bị phổ biến có rất nhiều ứng dụng trong thực tế:
+
+### Phần mềm ứng dụng cho người dùng cuối (end user)
+
+Đây là những ứng dụng gần gũi với người dùng phổ thông nhất, Win 10/11 chạy trên kiến trúc x86-64
+cung cấp các công cụ để:
+
+- Làm việc văn phòng (Office).
+
+- Tính toán mô phỏng: Matlab, Altium, Autocad, ... Để tính toán khoa học cũng như mô phỏng thực tế, 
+thiết kế các đối tượng.
+
+- Game và thiết kế đồ họa.
+
+Việc x86-64 có số lượng tập lệnh lớn hơn, xử lí được nhiều bit hơn và đánh số địa chỉ nhiều hơn giúp
+các phần mềm này dễ dàng mở rộng về mặt chức năng, tính toán và xử lý hình ảnh (render) nhanh hơn (phù hợp
+với các mục đích mô phỏng).
+
+x86-64 cũng hỗ trợ nhiều RAM hơn (so với x86-32 có giới hạn là 4GB RAM) giúp máy tính chạy đa tác vụ tốt hơn,
+sử dụng nhiều phần mềm cũng lúc. 
+
+Vừa dễ dàng cho các nhà phát triển để triển khai thêm tính năng của phần mềm mà không phải quá cân nhắc
+về mặt bộ nhớ, performance, vừa đem đến trải nghiệm tốt hơn cho người dùng cuối.
+
+
+### Server và các thiết bị cloud
+
+Hầu hết các server và thiết bị cloud (Linux và Window) sử dụng kiến trúc x86
+
+Nâng cao khả năng chịu tải của server, có thể xử lý lượng lớn request tới cùng lúc.
+
+Các hãng cloud sử dụng kiến trúc x86-64
+
+- Amazon AWS 
+- Google Cloud 
+- Microsoft Azure
+- v.v..
+
+### Phát triển phần mềm, AI và Machine learning
+
+Linux và các bản phân phối của Linux hiện tại (Ubuntu, Debian, Arch, ...) đều có phiên bản chạy
+trên x86-64 và được hỗ trợ mạnh mẽ cho kiến trúc này.
+
+Đây cũng là môi trường phổ biến để phát triển các phần mềm ứng dụng bao gồm:
+
+- Web app: Front-end và Back-end  development sử dụng các ngôn ngữ khác nhau (C++, C#, JS, Java, ...)
+
+- Mobile và Desktop app: Android Studio để phát triển ứng dụng android, hoặc C#, C++ hay JS cho các ứng dụng cross-platform.
+
+- Huấn luyện AI và học máy: Sử dụng Python (Pytorch, ...) kết hợp GPU để huấn luyện các mô hình.
+
+- Các ứng dụng trong nhúng và mạng cảm biến: Sử dụng để phát triển phần mềm nhúng cho các vi điều khiển 
+(ESP32, STM32, MPU6050 đều cung cấp các môi trường phát triển tích hợp trên nền tảng Linux với kiến trúc x86-64). 
+Từ đó, có thể phát triển theo hướng hệ thống nhúng, IoT và mạng cảm biến không dây, có nhiều ứng dụng thực tiễn.
+
 ## Tài liệu tham khảo
 
 - Giáo trình của em 
