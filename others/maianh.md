@@ -243,7 +243,7 @@ Một vài gợi ý của anh, em sẽ tự điều chỉnh lại câu chữ cho
 
 ### Về phần cứng 128 bit
 
-Bài cho con chat của xem có nhắc đến việc sẽ có thể có x86-128. Mặc dù bây giờ người ta đã giới thiệu
+Cái bài con chat viết cho em có nhắc đến việc sẽ có thể có x86-128. Mặc dù bây giờ người ta đã giới thiệu
 về chuẩn 128 bit rồi tuy nhiên 128 bit trở đi vượt xa nhu cầu của máy tính hiện tại, kể cả khi ứng
 dụng vào làm đồ họa, AI, crypto hay siêu máy tính. Hiểu đơn giản, máy tính hiện tại và trong một thời gian
 dài nữa cũng sẽ không cần to, bộ nhớ lớn và phức tạp đến mức phải cần tới phần cứng 128 bit. [Đọc ở đây](https://www.xda-developers.com/128-bit-cpus/)
