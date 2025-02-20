@@ -237,6 +237,59 @@ trên x86-64 và được hỗ trợ mạnh mẽ cho kiến trúc này.
 (ESP32, STM32, MPU6050 đều cung cấp các môi trường phát triển tích hợp trên nền tảng Linux với kiến trúc x86-64). 
 Từ đó, có thể phát triển theo hướng hệ thống nhúng, IoT và mạng cảm biến không dây, có nhiều ứng dụng thực tiễn.
 
+## Tương lai cho x86
+
+Một vài gợi ý của anh, em sẽ tự điều chỉnh lại câu chữ cho phù hợp.
+
+### Về phần cứng 128 bit
+
+Bài cho con chat của xem có nhắc đến việc sẽ có thể có x86-128. Mặc dù bây giờ người ta đã giới thiệu
+về chuẩn 128 bit rồi tuy nhiên 128 bit trở đi vượt xa nhu cầu của máy tính hiện tại, kể cả khi ứng
+dụng vào làm đồ họa, AI, crypto hay siêu máy tính. Hiểu đơn giản, máy tính hiện tại và trong một thời gian
+dài nữa cũng sẽ không cần to, bộ nhớ lớn và phức tạp đến mức phải cần tới phần cứng 128 bit. [Đọc ở đây](https://www.xda-developers.com/128-bit-cpus/)
+
+Do đó, chủ yếu người ta vẫn tập trung phát triển các ứng dụng trên kiến trúc 64 bit,
+mở rộng, thêm chức năng và khai thác tối đa khả năng của phần cứng có kiến trúc này.
+
+Khai thác và tối ưu hóa khả năng phần cứng để ứng dụng vào:
+
+- Huấn luyện AI: kết hợp với Card đồ họa để huấn luyện các mô hình học máy và AI. Chế tạo các AI chip [AI Chip](https://www.aiacceleratorinstitute.com/top-20-chips-choice/)
+
+- Phát triển mã hóa, bảo mật (crypto) trên môi trường mạng sử dụng phần cứng [High Performance Crypto on  x86 Platform](https://ieeexplore.ieee.org/document/9873766)
+
+- Khai thác khả năng phần cứng để phát triển đồ họa và mô phỏng bằng các tác vụ, tính toán chạy song song.
+
+### Điện thoại và thiết bị nhúng
+
+Lưu ý kiến trúc x86 chủ yếu được triển khai bới Intel và AMD, dùng trên máy tính.
+
+ARM sử dụng kiến trúc riêng, mặc dù phần cứng cũng là 64-bit
+
+Hầu hết điện thoại và vi điều khiển/nhúng đều sử dụng chip ARM, điện thoại chủ yếu là ARM64.
+
+Iphone: [Nguồn](https://docs.elementscompiler.com/Platforms/Cocoa/CpuArchitectures/)
+
+- arm64 is the current 64-bit ARM CPU architecture, as used since the iPhone 5S and later (6, 6S, SE and 7), the iPad Air, Air 2 and Pro, with the A7 and later chips.
+- armv7s (a.k.a. Swift, not to be confused with the language of the same name), being used in Apple's A6 and A6X chips on iPhone 5, iPhone 5C and iPad 4.
+- armv7, an older variation of the 32-bit ARM CPU, as used in the A5 and earlier.
+
+Tương tự với các thiết bị android và vi điều khiển. (Có thể tự tra loại chip của các thiết bị android).
+
+
+**Tại sao không phải là x86 ?**
+
+x86 có tập lệnh lớn và phức tạp, tiêu tốn nhiều năng lượng. Nhất là cái vế tiêu tốn nhiều năng lượng ấy,
+nó khiến cho x86 không phù hợp để làm các thiết bị nhỏ gọn và tiết kiệm năng lượng như là điện thoại hoặc 
+nhúng/IoT.
+
+Intel cũng đã từng cố gắng làm con `low-power Atom chips` để sử dụng cho điện thoại và máy tính bảng
+nhưng xịt và khai tử nó. [Xem tại đây](https://liliputing.com/reports-intel-is-killing-off-low-power-atom-chips/).
+
+Vậy nên, việc cải thiện độ tiêu thụ năng lượng của dòng x86 để ứng dụng vào các thiết bị nhỏ gọn, tiết kiệm
+cũng là một xu hướng phát triển của x86.
+
+
+
 ## Tài liệu tham khảo
 
 - Giáo trình của em 
