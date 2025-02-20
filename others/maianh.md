@@ -267,7 +267,7 @@ ARM sử dụng kiến trúc riêng, mặc dù phần cứng cũng là 64-bit
 
 Hầu hết điện thoại và vi điều khiển/nhúng đều sử dụng chip ARM, điện thoại chủ yếu là ARM64.
 
-Iphone: [Nguồn](https://docs.elementscompiler.com/Platforms/Cocoa/CpuArchitectures/)
+**Ví dụ CPU cho Iphone:** [Nguồn](https://docs.elementscompiler.com/Platforms/Cocoa/CpuArchitectures/)
 
 - arm64 is the current 64-bit ARM CPU architecture, as used since the iPhone 5S and later (6, 6S, SE and 7), the iPad Air, Air 2 and Pro, with the A7 and later chips.
 - armv7s (a.k.a. Swift, not to be confused with the language of the same name), being used in Apple's A6 and A6X chips on iPhone 5, iPhone 5C and iPad 4.
