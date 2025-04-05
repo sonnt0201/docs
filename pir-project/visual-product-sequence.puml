@@ -1,0 +1,23 @@
+
+@startuml  
+entity PIR_Array as pirs 
+entity Server as server 
+entity ML_Model as ml 
+
+pirs -> server: send PIR 0 voltages (100 values)
+pirs -> server: send PIR 1 voltages (100 values)
+pirs --> server:
+pirs -> server: send PIR 4 voltages (100 values)
+
+server -> server: seperate voltages into slices
+
+group loop through slices
+  server -> ml: send a slice
+  ml -> server: position
+  server -> : display visual position
+end 
+
+
+
+
+@enduml

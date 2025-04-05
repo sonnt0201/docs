@@ -1,8 +1,8 @@
-# PIR voltages' frame format for sending ADC values via UART
+# PIR voltages' frame format for sending ADC values via UART (deprecated)
 
 ## Abstraction
 
-To remove the noise caused by Socket opening when reading ADC values of PIR circuit. We decided to use 2 ESP32s:
+This page show a way to collect and send PIRs' ADC voltages to server using 2 ESP32s:
 
 - One for reading ADC, encoding the data and sending via UART.
 - The other as listener for UART packets, decode them and send to server using socket.
