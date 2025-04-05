@@ -109,13 +109,13 @@ Về nguồn chuẩn, đọc tại đây [[3]](#3-gary-s-may-phd-costas-j-spanos
 
 Cái này anh chịu :))) vì không trong ngành, nhưng cũng có một vài gợi ý cơ bản sau
 
-- Em chia làm 2 ý chính là **anh ninh trong nước** và **quốc phòng**
+- Em chia làm 2 ý chính là **an ninh trong nước** và **quốc phòng**
 
 - Báo đài (chính thống của nhà nước) sẽ có đầy, nhất là khi dạo này có "trend bán dẫn" (anh không thích cách người ta rêu rao cái trend này lắm), báo đài Tiếng Việt thì các em cứ search Tiếng Việt và khả năng cao sẽ tìm được thôi. Ví dụ [[10]](#ref10)
 
-- Nguy cơ với quốc gía có thể đến từ 
+- Nguy cơ với quốc gia có thể đến từ 
 
-    - Các đối tượng xấu, tội phạm công nghệ cao can thiệp vào mạng, vào chip hay phá sóng để ăn cắp thông tin hoặc thực hiện hành vi xấu (**anh ninh trong nước**)
+    - Các đối tượng xấu, tội phạm công nghệ cao can thiệp vào mạng, vào chip hay phá sóng để ăn cắp thông tin hoặc thực hiện hành vi xấu (**an ninh trong nước**)
 
     - Phụ thuộc vào công nghệ (phần cứng hoặc phần mềm) nước ngoài (do VN chưa tự sản xuất được chip), để chế tạo các thiết bị an ninh quốc phòng, từ đó rủi ro xảy ra khi có khủng hoảng kinh tế, mâu thuẫn chính trị, chiến tranh các nước khiến giá chip bị đẩy lên, gây khó khăn cho sự phát triển khoa học kĩ thuật => Phải tự chủ công nghệ, nâng cao trình độ và ưu tiên phát triển khoa học cơ bản, ...
 
