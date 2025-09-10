@@ -4,7 +4,7 @@
 
 Trong hầu hết các project IoT, một vi điều khiển (ESP32, ESP8684, ...), thường đều có một chức năng chung là kết nối mạng, kết nối tới server và đẩy dữ liệu do vi điều khiển thu thập được lên server đó. Tùy vào từng project khác nhau mà loại dữ liệu thu thập, giao thức sử dụng cũng như cách thức xử lý dữ liệu thô trước khi gửi là khác nhau, nhưng nhu cầu kết nối WiFi và server thì luôn có.
 
-Do đó, ý tưởng của project này là xây dựng 1 **thư viện** chung cho **ESP32** có chức năng **tự động kết nối** tới WiFi và server, từ đó có thể sử dụng thư viện này vào nhiều IoT Project khác. Với thư viện này, ESP32 có thể:
+Do đó, ý tưởng của project này là xây dựng 1 **thư viện** chung cho **ESP32** có chức năng **tự động kết nối** tới WiFi và server, từ đó có thể sử dụng thư viện này vào nhiều IoT Project khác. Với thư viện này, ESP32:
 
 1. Khi khởi động có thể tự dò và kết nối với các WiFi có sẵn trong danh sách, chọn WiFi tốt nhất dò được để kết nối
 
